@@ -290,6 +290,32 @@
                     </view>
                     <navigationItem key="navigationItem" id="h2b-ef-7Gy"/>
                     <connections>
+                        <outlet property="buttonA" destination="cqD-rc-YmM" id="FCp-vA-VZF"/>
+                        <outlet property="buttonB" destination="Bql-Sg-gWz" id="Cnc-ov-ySj"/>
+                        <outlet property="buttonC" destination="WCm-gV-nEj" id="SYe-kg-z3L"/>
+                        <outlet property="buttonD" destination="TwK-g2-sOV" id="frt-7i-Pk6"/>
+                        <outlet property="buttonE" destination="ZVF-9p-Gzo" id="Edr-Df-UYd"/>
+                        <outlet property="buttonF" destination="YQH-Gk-UD7" id="TDA-rs-mdX"/>
+                        <outlet property="buttonG" destination="7vb-Zr-cBf" id="6C6-PW-AWk"/>
+                        <outlet property="buttonH" destination="qmm-7I-3SZ" id="prK-87-JmH"/>
+                        <outlet property="buttonI" destination="yBF-Yv-t6O" id="yx6-lD-ytO"/>
+                        <outlet property="buttonJ" destination="Hhr-DU-9Ch" id="rtz-1Y-CIZ"/>
+                        <outlet property="buttonK" destination="Xck-mz-kBK" id="JJY-H1-dIu"/>
+                        <outlet property="buttonL" destination="dN2-o1-9W0" id="YyR-QK-f7T"/>
+                        <outlet property="buttonM" destination="GXO-4k-I4R" id="hdI-Fz-pKH"/>
+                        <outlet property="buttonN" destination="Fl7-kR-7nU" id="7kD-4j-gal"/>
+                        <outlet property="buttonO" destination="rea-zd-S2B" id="QX8-Pl-lbf"/>
+                        <outlet property="buttonP" destination="1jN-CG-Vpv" id="xZy-IR-D4c"/>
+                        <outlet property="buttonQ" destination="UGr-0z-LiK" id="O9g-Zt-7Oa"/>
+                        <outlet property="buttonR" destination="MHV-85-5n7" id="6Cy-To-OCl"/>
+                        <outlet property="buttonS" destination="fr6-iy-l0I" id="9Ob-tA-x6O"/>
+                        <outlet property="buttonT" destination="0m3-wX-LG5" id="6LV-nl-l2q"/>
+                        <outlet property="buttonU" destination="Z4i-HE-CKz" id="KaL-Io-zXh"/>
+                        <outlet property="buttonV" destination="ReS-4K-M7A" id="NOX-wM-u8H"/>
+                        <outlet property="buttonW" destination="qfv-Pa-nKO" id="bBq-fq-6NV"/>
+                        <outlet property="buttonX" destination="Un3-86-lBq" id="J76-b5-HEN"/>
+                        <outlet property="buttonY" destination="zyZ-lA-h6Z" id="WKF-em-k0w"/>
+                        <outlet property="buttonZ" destination="B8L-F1-UPc" id="Xss-6J-wYk"/>
                         <outlet property="guessesRemainingLabel" destination="Tgw-uL-kDy" id="g4g-if-S37"/>
                         <outlet property="scoreLabel" destination="6u6-pJ-Yho" id="LWc-PZ-nKk"/>
                         <outlet property="wordLabel" destination="0pp-iG-M4R" id="SbJ-3d-JEd"/>

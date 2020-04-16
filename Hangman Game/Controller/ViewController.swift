@@ -13,9 +13,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessesRemainingLabel: UILabel!
-    
-    
+    @IBOutlet weak var buttonA: UIButton!
+    @IBOutlet weak var buttonB: UIButton!
+    @IBOutlet weak var buttonC: UIButton!
+    @IBOutlet weak var buttonD: UIButton!
+    @IBOutlet weak var buttonE: UIButton!
+    @IBOutlet weak var buttonF: UIButton!
+    @IBOutlet weak var buttonG: UIButton!
+    @IBOutlet weak var buttonH: UIButton!
+    @IBOutlet weak var buttonI: UIButton!
+    @IBOutlet weak var buttonJ: UIButton!
+    @IBOutlet weak var buttonK: UIButton!
+    @IBOutlet weak var buttonL: UIButton!
+    @IBOutlet weak var buttonM: UIButton!
+    @IBOutlet weak var buttonN: UIButton!
+    @IBOutlet weak var buttonO: UIButton!
+    @IBOutlet weak var buttonP: UIButton!
+    @IBOutlet weak var buttonQ: UIButton!
+    @IBOutlet weak var buttonR: UIButton!
+    @IBOutlet weak var buttonS: UIButton!
+    @IBOutlet weak var buttonT: UIButton!
+    @IBOutlet weak var buttonU: UIButton!
+    @IBOutlet weak var buttonV: UIButton!
+    @IBOutlet weak var buttonW: UIButton!
+    @IBOutlet weak var buttonX: UIButton!
+    @IBOutlet weak var buttonY: UIButton!
+    @IBOutlet weak var buttonZ: UIButton!
+        
     //  Array for all words + letters
+    
+    var buttonsArray = [UIButton]()
+    
     var wordLetterArray = [String]()
     var word = ""
     
@@ -40,10 +68,6 @@ class ViewController: UIViewController {
     }
     
     
-    //MARK: - Storyboard
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -51,6 +75,34 @@ class ViewController: UIViewController {
         title = "Hangman ☠️"
         navigationController?.navigationBar.prefersLargeTitles =  true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
+        
+        buttonsArray.append(buttonA)
+        buttonsArray.append(buttonB)
+        buttonsArray.append(buttonC)
+        buttonsArray.append(buttonD)
+        buttonsArray.append(buttonE)
+        buttonsArray.append(buttonF)
+        buttonsArray.append(buttonG)
+        buttonsArray.append(buttonH)
+        buttonsArray.append(buttonI)
+        buttonsArray.append(buttonJ)
+        buttonsArray.append(buttonK)
+        buttonsArray.append(buttonL)
+        buttonsArray.append(buttonM)
+        buttonsArray.append(buttonN)
+        buttonsArray.append(buttonO)
+        buttonsArray.append(buttonP)
+        buttonsArray.append(buttonQ)
+        buttonsArray.append(buttonR)
+        buttonsArray.append(buttonS)
+        buttonsArray.append(buttonT)
+        buttonsArray.append(buttonU)
+        buttonsArray.append(buttonV)
+        buttonsArray.append(buttonW)
+        buttonsArray.append(buttonX)
+        buttonsArray.append(buttonY)
+        buttonsArray.append(buttonZ)
+        
         
         loadGame()
     }
@@ -94,7 +146,9 @@ class ViewController: UIViewController {
         checkToSeeIfCompleted()
         
         if levelCompleted {
-            
+            for button in buttonsArray {
+                button.isEnabled = true
+            }
             levelCompleted = false
         }
         
@@ -138,6 +192,8 @@ class ViewController: UIViewController {
         word = ""
         maskedWord = ""
         maskedWordArray = [String]()
+        
+        livesRemaining = 10
         
         //  Save word into an array + string
         word = wordStrings[level]
