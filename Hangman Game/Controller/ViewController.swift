@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessesRemainingLabel: UILabel!
     
+    
     //  Array for all words + letters
     var wordLetterArray = [String]()
     var word = ""
@@ -21,8 +22,10 @@ class ViewController: UIViewController {
     var maskedWord = ""
     var maskedWordArray = [String]()
     
-    
+    var wordStrings = [String]()
     var level = 1
+    var levelCompleted = false
+    
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -36,19 +39,25 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    //MARK: - Storyboard
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+    
         title = "Hangman ☠️"
         navigationController?.navigationBar.prefersLargeTitles =  true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
         
-        loadLevel()
+        loadGame()
     }
     
     @objc func giveClue() {
         
+        // IF LETTER IS NOT USED
         guard let randomElement = wordLetterArray.randomElement()?.capitalized else { return }
         let wordLen = wordLetterArray.count
         
@@ -83,11 +92,16 @@ class ViewController: UIViewController {
         
         // check to see if the game is completed + reset
         checkToSeeIfCompleted()
+        
+        if levelCompleted {
+            
+            levelCompleted = false
+        }
+        
     }
     
-    func loadLevel() {
+    func loadGame() {
         // Read data from disk on BG thread
-        var wordStrings = [String]()
         
         if let fileURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
             if let wordContents = try? String(contentsOf: fileURL) {
@@ -96,6 +110,34 @@ class ViewController: UIViewController {
                 wordStrings += lines
             }
         }
+        
+        loadWord()
+    }
+    
+    
+    func checkToSeeIfCompleted() {
+        
+        if livesRemaining > 0 {
+            
+            if maskedWord == word {
+                level += 1
+                showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman", actionTitle: "Restart", actionClosure: self.loadWord)
+                levelCompleted = true
+            }
+            
+        } else {
+            level += 1
+            showAlertAction(title: "💀", message: "The hangman caught you", actionTitle: "Restart", actionClosure: self.loadWord)
+            levelCompleted =  true
+        }
+        
+    }
+    
+    func loadWord() {
+        wordLetterArray = [String]()
+        word = ""
+        maskedWord = ""
+        maskedWordArray = [String]()
         
         //  Save word into an array + string
         word = wordStrings[level]
@@ -114,31 +156,6 @@ class ViewController: UIViewController {
         wordLabel.text = maskedWord
     }
     
-    
-    func checkToSeeIfCompleted() {
-        if livesRemaining > 0 {
-            
-            if maskedWord == word {
-                showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman", actionTitle: "Restart", actionClosure: self.loadLevel)
-                resetWord()
-            }
-            
-        } else {
-            showAlertAction(title: "💀", message: "The hangman caught you", actionTitle: "Restart", actionClosure: self.loadLevel)
-            resetWord()
-        }
-    }
-    
-    func resetWord() {
-        wordLetterArray = [String]()
-        word = ""
-        maskedWord = ""
-        maskedWordArray = [String]()
-        
-        
-        
-    }
-    
 }
 
 //MARK: - UIViewController Extensions
@@ -150,6 +167,5 @@ extension ViewController {
         ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
         self.present(ac, animated: true, completion: nil)
     }
-    
     
 }
