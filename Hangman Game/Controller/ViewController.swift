@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var maskedWord = ""
     var maskedWordArray = [String]()
     
+    
     var level = 1
     var score = 0 {
         didSet {
@@ -38,7 +39,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        title = "Hangman ๅ"
+        
+        title = "Hangman ☠️"
         navigationController?.navigationBar.prefersLargeTitles =  true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
         
@@ -47,9 +49,13 @@ class ViewController: UIViewController {
     
     @objc func giveClue() {
         
-        let randomElement = wordLetterArray.randomElement()?.capitalized
-        // Give element and make them loose a point!
-        print("Clue tapped!")
+        guard let randomElement = wordLetterArray.randomElement()?.capitalized else { return }
+        let wordLen = wordLetterArray.count
+        
+        showAlertAction(title: "🕵️", message: "The current word is \(wordLen) characters, have you considered using the letter '\(randomElement)'?", actionClosure: {})
+        
+        score -= 1
+        livesRemaining -= 1
     }
     
     
@@ -113,26 +119,36 @@ class ViewController: UIViewController {
         if livesRemaining > 0 {
             
             if maskedWord == word {
-              print("completed it mate")
+                showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman", actionTitle: "Restart", actionClosure: self.loadLevel)
+                resetWord()
             }
-
+            
         } else {
-            print("Game ended")
-            // Restart by loading game again, or consider
+            showAlertAction(title: "💀", message: "The hangman caught you", actionTitle: "Restart", actionClosure: self.loadLevel)
+            resetWord()
         }
+    }
+    
+    func resetWord() {
+        wordLetterArray = [String]()
+        word = ""
+        maskedWord = ""
+        maskedWordArray = [String]()
+        
         
         
     }
-
+    
 }
+
+//MARK: - UIViewController Extensions
 
 extension ViewController {
     
-    func acPopUpController(title: String, message: String, actionTitle: String = "OK") {
+    func showAlertAction(title: String, message: String, actionTitle: String = "OK", actionClosure: @escaping () -> Void){
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil)) // Consider adding a handler incase someone wants to restart
-        present(ac, animated: true)
+        ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
+        self.present(ac, animated: true, completion: nil)
     }
     
     
