@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessesRemainingLabel: UILabel!
+    
     @IBOutlet weak var buttonA: UIButton!
     @IBOutlet weak var buttonB: UIButton!
     @IBOutlet weak var buttonC: UIButton!
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonX: UIButton!
     @IBOutlet weak var buttonY: UIButton!
     @IBOutlet weak var buttonZ: UIButton!
-        
+    
     //  Array for all words + letters
     
     var buttonsArray = [UIButton]()
@@ -72,8 +73,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
-        title = "Hangman ☠️"
+        
+        title = K.appName
         navigationController?.navigationBar.prefersLargeTitles =  true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
         
@@ -104,7 +105,6 @@ class ViewController: UIViewController {
         buttonsArray.append(buttonY)
         buttonsArray.append(buttonZ)
         
-        
         loadGame()
     }
     
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         guard let letterChosen = sender.currentTitle?.lowercased() else { return }
         
         usedLetters.append(letterChosen)
-    
+        
         if wordLetterArray.contains(letterChosen) {
             
             for (index, letter) in wordLetterArray.enumerated() {
@@ -169,6 +169,8 @@ class ViewController: UIViewController {
                 lines.shuffle()
                 wordStrings += lines
             }
+        } else {
+            showAlertAction(title: "Error", message: "There was an error fetching data, please try again!", actionClosure: {})
         }
         
         loadWord()
@@ -220,14 +222,3 @@ class ViewController: UIViewController {
     
 }
 
-//MARK: - UIViewController Extensions
-
-extension ViewController {
-    
-    func showAlertAction(title: String, message: String, actionTitle: String = "OK", actionClosure: @escaping () -> Void){
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
-        self.present(ac, animated: true, completion: nil)
-    }
-    
-}
