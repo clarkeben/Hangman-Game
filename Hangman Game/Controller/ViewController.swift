@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     var wordStrings = [String]()
     var level = 1
     var levelCompleted = false
+    var usedLetters = ""
     
     var score = 0 {
         didSet {
@@ -109,20 +110,25 @@ class ViewController: UIViewController {
     
     @objc func giveClue() {
         
-        // IF LETTER IS NOT USED
-        guard let randomElement = wordLetterArray.randomElement()?.capitalized else { return }
+        let filteredLetters = wordLetterArray.filter { !$0.contains(usedLetters) }
+        guard let randomElement = filteredLetters.randomElement()?.capitalized else { return }
+        
         let wordLen = wordLetterArray.count
         
         showAlertAction(title: "🕵️", message: "The current word is \(wordLen) characters, have you considered using the letter '\(randomElement)'?", actionClosure: {})
         
         score -= 1
         livesRemaining -= 1
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     
     @IBAction func letterTapped(_ sender: UIButton) {
         guard let letterChosen = sender.currentTitle?.lowercased() else { return }
         
+        usedLetters.append(letterChosen)
+    
         if wordLetterArray.contains(letterChosen) {
             
             for (index, letter) in wordLetterArray.enumerated() {
