@@ -10,6 +10,15 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var logoImg: UIImageView!
+    @IBOutlet weak var totalScoreLabel: UILabel!
+    
+    @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var settingsBtn: UIButton!
+    @IBOutlet weak var howToPlayBtn: UIButton!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
@@ -17,14 +26,15 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
         
-        // Animate logo
+        // Animate Btns + Labels
+        titleLabel.typingTextAnimation(text: K.appName)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.isNavigationBarHidden = false
     }
     
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jtG-lG-Gn0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -49,12 +49,18 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-PY-Hja">
                                         <rect key="frame" x="0.0" y="76" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="How To Play"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="bOx-MS-Wrg" kind="show" id="K1m-bM-VkW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQR-bx-U6O">
                                         <rect key="frame" x="0.0" y="152" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Settings"/>
+                                        <state key="normal" title="How To Play"/>
+                                        <connections>
+                                            <segue destination="Tvp-FU-Zon" kind="show" id="6qh-wX-0DM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -73,6 +79,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xgb-83-pih"/>
                     <connections>
+                        <outlet property="howToPlayBtn" destination="NQR-bx-U6O" id="IAc-6B-Ghs"/>
+                        <outlet property="logoImg" destination="1wr-Zc-hoN" id="nPI-yH-XYe"/>
+                        <outlet property="playBtn" destination="rrp-CD-YKo" id="Vvo-lf-ynf"/>
+                        <outlet property="settingsBtn" destination="vyG-PY-Hja" id="usy-Ts-P2P"/>
+                        <outlet property="titleLabel" destination="hGX-bl-vzJ" id="PNi-fO-Xz3"/>
+                        <outlet property="totalScoreLabel" destination="50j-Yu-U6s" id="Rfp-Tt-sRT"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToGame" id="FIH-3V-ieG"/>
                     </connections>
                 </viewController>
@@ -363,35 +375,35 @@
                     </view>
                     <navigationItem key="navigationItem" id="h2b-ef-7Gy"/>
                     <connections>
-                        <outlet property="buttonA" destination="cqD-rc-YmM" id="FCp-vA-VZF"/>
-                        <outlet property="buttonB" destination="Bql-Sg-gWz" id="Cnc-ov-ySj"/>
-                        <outlet property="buttonC" destination="WCm-gV-nEj" id="SYe-kg-z3L"/>
-                        <outlet property="buttonD" destination="TwK-g2-sOV" id="frt-7i-Pk6"/>
-                        <outlet property="buttonE" destination="ZVF-9p-Gzo" id="Edr-Df-UYd"/>
-                        <outlet property="buttonF" destination="YQH-Gk-UD7" id="TDA-rs-mdX"/>
-                        <outlet property="buttonG" destination="7vb-Zr-cBf" id="6C6-PW-AWk"/>
-                        <outlet property="buttonH" destination="qmm-7I-3SZ" id="prK-87-JmH"/>
-                        <outlet property="buttonI" destination="yBF-Yv-t6O" id="yx6-lD-ytO"/>
-                        <outlet property="buttonJ" destination="Hhr-DU-9Ch" id="rtz-1Y-CIZ"/>
-                        <outlet property="buttonK" destination="Xck-mz-kBK" id="JJY-H1-dIu"/>
-                        <outlet property="buttonL" destination="dN2-o1-9W0" id="YyR-QK-f7T"/>
-                        <outlet property="buttonM" destination="GXO-4k-I4R" id="hdI-Fz-pKH"/>
-                        <outlet property="buttonN" destination="Fl7-kR-7nU" id="7kD-4j-gal"/>
-                        <outlet property="buttonO" destination="rea-zd-S2B" id="QX8-Pl-lbf"/>
-                        <outlet property="buttonP" destination="1jN-CG-Vpv" id="xZy-IR-D4c"/>
-                        <outlet property="buttonQ" destination="UGr-0z-LiK" id="O9g-Zt-7Oa"/>
-                        <outlet property="buttonR" destination="MHV-85-5n7" id="6Cy-To-OCl"/>
-                        <outlet property="buttonS" destination="fr6-iy-l0I" id="9Ob-tA-x6O"/>
-                        <outlet property="buttonT" destination="0m3-wX-LG5" id="6LV-nl-l2q"/>
-                        <outlet property="buttonU" destination="Z4i-HE-CKz" id="KaL-Io-zXh"/>
-                        <outlet property="buttonV" destination="ReS-4K-M7A" id="NOX-wM-u8H"/>
-                        <outlet property="buttonW" destination="qfv-Pa-nKO" id="bBq-fq-6NV"/>
-                        <outlet property="buttonX" destination="Un3-86-lBq" id="J76-b5-HEN"/>
-                        <outlet property="buttonY" destination="zyZ-lA-h6Z" id="WKF-em-k0w"/>
-                        <outlet property="buttonZ" destination="B8L-F1-UPc" id="Xss-6J-wYk"/>
                         <outlet property="guessesRemainingLabel" destination="Tgw-uL-kDy" id="g4g-if-S37"/>
                         <outlet property="scoreLabel" destination="6u6-pJ-Yho" id="LWc-PZ-nKk"/>
                         <outlet property="wordLabel" destination="0pp-iG-M4R" id="SbJ-3d-JEd"/>
+                        <outletCollection property="letterButtons" destination="cqD-rc-YmM" collectionClass="NSMutableArray" id="CSn-Rz-9MF"/>
+                        <outletCollection property="letterButtons" destination="Bql-Sg-gWz" collectionClass="NSMutableArray" id="QIf-Y0-j3w"/>
+                        <outletCollection property="letterButtons" destination="WCm-gV-nEj" collectionClass="NSMutableArray" id="8u7-ka-0kR"/>
+                        <outletCollection property="letterButtons" destination="TwK-g2-sOV" collectionClass="NSMutableArray" id="nQP-Zp-CLY"/>
+                        <outletCollection property="letterButtons" destination="ZVF-9p-Gzo" collectionClass="NSMutableArray" id="lRM-8n-I02"/>
+                        <outletCollection property="letterButtons" destination="YQH-Gk-UD7" collectionClass="NSMutableArray" id="j2t-4g-C7F"/>
+                        <outletCollection property="letterButtons" destination="7vb-Zr-cBf" collectionClass="NSMutableArray" id="cms-nt-hUI"/>
+                        <outletCollection property="letterButtons" destination="qmm-7I-3SZ" collectionClass="NSMutableArray" id="EEY-Ik-RPN"/>
+                        <outletCollection property="letterButtons" destination="yBF-Yv-t6O" collectionClass="NSMutableArray" id="WXb-ez-EM0"/>
+                        <outletCollection property="letterButtons" destination="Hhr-DU-9Ch" collectionClass="NSMutableArray" id="QAW-Ad-CmZ"/>
+                        <outletCollection property="letterButtons" destination="Xck-mz-kBK" collectionClass="NSMutableArray" id="fie-vq-sgf"/>
+                        <outletCollection property="letterButtons" destination="dN2-o1-9W0" collectionClass="NSMutableArray" id="Zuq-1G-KxH"/>
+                        <outletCollection property="letterButtons" destination="GXO-4k-I4R" collectionClass="NSMutableArray" id="XdX-gl-IGI"/>
+                        <outletCollection property="letterButtons" destination="Fl7-kR-7nU" collectionClass="NSMutableArray" id="BGr-eT-PlB"/>
+                        <outletCollection property="letterButtons" destination="rea-zd-S2B" collectionClass="NSMutableArray" id="xFc-A6-ntk"/>
+                        <outletCollection property="letterButtons" destination="1jN-CG-Vpv" collectionClass="NSMutableArray" id="LB4-Sb-7b1"/>
+                        <outletCollection property="letterButtons" destination="UGr-0z-LiK" collectionClass="NSMutableArray" id="fiz-US-6bu"/>
+                        <outletCollection property="letterButtons" destination="MHV-85-5n7" collectionClass="NSMutableArray" id="Jsv-0n-hmC"/>
+                        <outletCollection property="letterButtons" destination="fr6-iy-l0I" collectionClass="NSMutableArray" id="Jvx-WU-EkQ"/>
+                        <outletCollection property="letterButtons" destination="0m3-wX-LG5" collectionClass="NSMutableArray" id="tTX-3O-BfN"/>
+                        <outletCollection property="letterButtons" destination="Z4i-HE-CKz" collectionClass="NSMutableArray" id="GiK-OO-wAm"/>
+                        <outletCollection property="letterButtons" destination="ReS-4K-M7A" collectionClass="NSMutableArray" id="d8v-5G-bFe"/>
+                        <outletCollection property="letterButtons" destination="qfv-Pa-nKO" collectionClass="NSMutableArray" id="PQW-h3-kZP"/>
+                        <outletCollection property="letterButtons" destination="Un3-86-lBq" collectionClass="NSMutableArray" id="x61-z1-ypM"/>
+                        <outletCollection property="letterButtons" destination="zyZ-lA-h6Z" collectionClass="NSMutableArray" id="QgJ-U2-EZG"/>
+                        <outletCollection property="letterButtons" destination="B8L-F1-UPc" collectionClass="NSMutableArray" id="P5m-Zw-ujZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -415,6 +427,114 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNp-6e-HhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="126.5625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LJv-BZ-L5p">
+            <objects>
+                <viewController id="bOx-MS-Wrg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bAT-bs-y1B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="cQx-Wi-FJj">
+                                <rect key="frame" x="20" y="188" width="374" height="173"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="235" translatesAutoresizingMaskIntoConstraints="NO" id="tDt-qy-l5R">
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2b-fY-dNV">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfg-Ld-NaW">
+                                                <rect key="frame" x="297" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wwm-D3-3NP">
+                                        <rect key="frame" x="0.0" y="71" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-pd-21C">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="naW-IE-9EV">
+                                                <rect key="frame" x="185" y="0.0" width="191" height="32"/>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="192" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-8G-mSR">
+                                        <rect key="frame" x="0.0" y="142" width="334" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound FX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-TT-jdP">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-20-9Ks">
+                                                <rect key="frame" x="285" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="f7g-FK-21B" firstAttribute="trailing" secondItem="cQx-Wi-FJj" secondAttribute="trailing" constant="20" id="DTF-WH-ywL"/>
+                            <constraint firstItem="cQx-Wi-FJj" firstAttribute="leading" secondItem="f7g-FK-21B" secondAttribute="leading" constant="20" id="Wt3-A7-ITA"/>
+                            <constraint firstItem="cQx-Wi-FJj" firstAttribute="top" secondItem="f7g-FK-21B" secondAttribute="top" constant="100" id="pFt-UP-Fkt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f7g-FK-21B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ca3-sl-BEO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EhP-3d-EfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600.0000000000002" y="906.69642857142856"/>
+        </scene>
+        <!--How To Play Table View Controller-->
+        <scene sceneID="tDS-bE-Nr0">
+            <objects>
+                <tableViewController id="Tvp-FU-Zon" customClass="HowToPlayTableViewController" customModule="Hangman_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ok6-G4-nNb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rulesCell" textLabel="Td9-BI-K3W" style="IBUITableViewCellStyleDefault" id="OQX-rK-E57">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OQX-rK-E57" id="Uc4-lu-gZQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Td9-BI-K3W">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tvp-FU-Zon" id="WKn-pO-CDG"/>
+                            <outlet property="delegate" destination="Tvp-FU-Zon" id="bpv-1f-PYq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="83F-u9-2BO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lBa-Lf-dv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2307" y="905"/>
         </scene>
     </scenes>
 </document>

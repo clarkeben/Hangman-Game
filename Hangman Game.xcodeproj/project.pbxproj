@@ -13,6 +13,7 @@
 		14411B9C243F0D670011B085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9A243F0D670011B085 /* Main.storyboard */; };
 		14411B9E243F0D6F0011B085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9D243F0D6F0011B085 /* Assets.xcassets */; };
 		14411BA1243F0D6F0011B085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9F243F0D6F0011B085 /* LaunchScreen.storyboard */; };
+		1454E6F6244EEC0A00B5F2BD /* HowToPlayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454E6F5244EEC0A00B5F2BD /* HowToPlayTableViewController.swift */; };
 		146F681B244A184200E02E6D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F681A244A184200E02E6D /* WelcomeViewController.swift */; };
 		146F681D244A1C4F00E02E6D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F681C244A1C4F00E02E6D /* ViewExtensions.swift */; };
 		1482E7622441C4B50032B210 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1482E7612441C4B40032B210 /* words.txt */; };
@@ -28,6 +29,7 @@
 		14411B9D243F0D6F0011B085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14411BA0243F0D6F0011B085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14411BA2243F0D6F0011B085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1454E6F5244EEC0A00B5F2BD /* HowToPlayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayTableViewController.swift; sourceTree = "<group>"; };
 		146F681A244A184200E02E6D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		146F681C244A1C4F00E02E6D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		1482E7612441C4B40032B210 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				14411B98243F0D670011B085 /* ViewController.swift */,
 				146F681A244A184200E02E6D /* WelcomeViewController.swift */,
 				146F681C244A1C4F00E02E6D /* ViewExtensions.swift */,
+				1454E6F5244EEC0A00B5F2BD /* HowToPlayTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				14411B95243F0D670011B085 /* AppDelegate.swift in Sources */,
 				14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */,
 				146F681D244A1C4F00E02E6D /* ViewExtensions.swift in Sources */,
+				1454E6F6244EEC0A00B5F2BD /* HowToPlayTableViewController.swift in Sources */,
 				1486FC9D2449B6CF003FB3B5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
