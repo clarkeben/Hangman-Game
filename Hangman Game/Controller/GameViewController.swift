@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
@@ -160,6 +160,7 @@ class ViewController: UIViewController {
         }
         
         wordLabel.text = maskedWord
+        wordLabel.typingTextAnimation(text: maskedWord, timeInterval: 0.2)
     }
     
     func nextLevel() {

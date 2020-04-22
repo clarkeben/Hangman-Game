@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Button animations 
-        titleLabel.typingTextAnimation(text: K.appName)
+        titleLabel.typingTextAnimation(text: K.appName, timeInterval: 0.1)
         playBtn.fadeInBtn(duration: 1.0)
         settingsBtn.fadeInBtn(duration: 1.0)
         howToPlayBtn.fadeInBtn(duration: 1.0)

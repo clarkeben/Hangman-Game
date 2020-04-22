@@ -11,7 +11,7 @@ import UIKit
 
 //MARK: - UIViewController Extensions
 
-extension ViewController {
+extension GameViewController {
     
     func showAlertAction(title: String, message: String, actionTitle: String = "OK", actionClosure: @escaping () -> Void){
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -74,7 +74,7 @@ extension UIButton {
 //MARK: - UImageView Extensions
 
 extension UIImageView {
-    
+    // Fade in img
     func animateImg(duration: Double) {
         self.alpha = 0
         UIView.animate(withDuration: duration) {
@@ -87,14 +87,14 @@ extension UIImageView {
 //MARK: - UILabel Extension
 
 extension UILabel {
-    
-    func typingTextAnimation(text: String) {
+    // Typing animation
+    func typingTextAnimation(text: String, timeInterval: Double) {
         self.text = ""
         self.alpha = 0
         var charIndex = 0.0
         
         for letter in text  {
-            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+            Timer.scheduledTimer(withTimeInterval: timeInterval * charIndex, repeats: false) { (timer) in
                 self.text?.append(letter)
             }
             charIndex += 1
