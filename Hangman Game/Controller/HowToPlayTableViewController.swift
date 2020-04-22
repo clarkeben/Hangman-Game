@@ -10,6 +10,7 @@ import UIKit
 
 class HowToPlayTableViewController: UITableViewController {
     
+    var rulesTitle = K.rules.gamesRulesTitle
     var rules = K.rules.gamesRules
     
     override func viewDidLoad() {
@@ -19,7 +20,7 @@ class HowToPlayTableViewController: UITableViewController {
         
         title = K.howTopPlayVCName
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.reloadWithAnimation()
+        tableView.reloadWithBounceAnimation()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,13 +29,10 @@ class HowToPlayTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.rules.cellName, for: indexPath)
-        cell.textLabel?.text = rules[indexPath.row]
+        cell.textLabel?.text = rulesTitle[indexPath.row]
+        cell.detailTextLabel?.text = rules[indexPath.row]
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//
-//        //cell.fadeInCell()
-//    }
     
 }

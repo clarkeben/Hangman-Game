@@ -44,14 +44,17 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrp-CD-YKo">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playBtnPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="OkE-wB-C54"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-PY-Hja">
                                         <rect key="frame" x="0.0" y="76" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Settings"/>
                                         <connections>
-                                            <segue destination="bOx-MS-Wrg" kind="show" id="K1m-bM-VkW"/>
+                                            <action selector="settingsBtnPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="4Ef-BR-n0Y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQR-bx-U6O">
@@ -59,7 +62,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="How To Play"/>
                                         <connections>
-                                            <segue destination="Tvp-FU-Zon" kind="show" id="6qh-wX-0DM"/>
+                                            <action selector="howToPlayPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="Xtr-ff-QPM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -86,6 +89,8 @@
                         <outlet property="titleLabel" destination="hGX-bl-vzJ" id="PNi-fO-Xz3"/>
                         <outlet property="totalScoreLabel" destination="50j-Yu-U6s" id="Rfp-Tt-sRT"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToGame" id="FIH-3V-ieG"/>
+                        <segue destination="Tvp-FU-Zon" kind="show" identifier="goToHowToPlay" id="Xk6-CV-7uC"/>
+                        <segue destination="bOx-MS-Wrg" kind="show" identifier="goToSettings" id="NXd-9w-sa3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQJ-Zd-XIN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -428,10 +433,10 @@
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="126.5625"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="LJv-BZ-L5p">
             <objects>
-                <viewController id="bOx-MS-Wrg" sceneMemberID="viewController">
+                <viewController id="bOx-MS-Wrg" customClass="SettingsViewController" customModule="Hangman_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bAT-bs-y1B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,20 +455,29 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfg-Ld-NaW">
                                                 <rect key="frame" x="297" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="soundSwitch:" destination="bOx-MS-Wrg" eventType="valueChanged" id="mhC-eV-ZHg"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wwm-D3-3NP">
-                                        <rect key="frame" x="0.0" y="71" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="71" width="360" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-pd-21C">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="naW-IE-9EV">
-                                                <rect key="frame" x="185" y="0.0" width="191" height="32"/>
+                                                <rect key="frame" x="178" y="0.0" width="184" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="PLN-id-AGG"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="volumeChanged:" destination="bOx-MS-Wrg" eventType="valueChanged" id="sdo-UY-JWN"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -478,6 +492,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-20-9Ks">
                                                 <rect key="frame" x="285" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="soundFXSwitch:" destination="bOx-MS-Wrg" eventType="valueChanged" id="dLW-Rc-UED"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -493,6 +510,11 @@
                         <viewLayoutGuide key="safeArea" id="f7g-FK-21B"/>
                     </view>
                     <navigationItem key="navigationItem" id="ca3-sl-BEO"/>
+                    <connections>
+                        <outlet property="soundFXSwitch" destination="DDl-20-9Ks" id="ysC-Pm-Rxe"/>
+                        <outlet property="soundSwitch" destination="lfg-Ld-NaW" id="577-i2-5Lb"/>
+                        <outlet property="volumeSlider" destination="naW-IE-9EV" id="obf-2a-z4X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhP-3d-EfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,17 +529,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rulesCell" textLabel="Td9-BI-K3W" style="IBUITableViewCellStyleDefault" id="OQX-rK-E57">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rulesCell" textLabel="Td9-BI-K3W" detailTextLabel="goM-1O-C2D" style="IBUITableViewCellStyleSubtitle" id="OQX-rK-E57">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OQX-rK-E57" id="Uc4-lu-gZQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Td9-BI-K3W">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Td9-BI-K3W">
+                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="goM-1O-C2D">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

@@ -27,8 +27,11 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Animate Btns + Labels
+        // Button animations 
         titleLabel.typingTextAnimation(text: K.appName)
+        playBtn.fadeInBtn(duration: 1.0)
+        settingsBtn.fadeInBtn(duration: 1.0)
+        howToPlayBtn.fadeInBtn(duration: 1.0)
 
     }
     
@@ -36,6 +39,19 @@ class WelcomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
     }
+    
+    @IBAction func playBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: K.gameSeugue, sender: self)
+    }
+    
+    @IBAction func settingsBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: K.settingsSegue, sender: self)
+    }
+    
+    @IBAction func howToPlayPressed(_ sender: Any) {
+        performSegue(withIdentifier: K.howToPlaySegue, sender: self)
+    }
+    
     
     
     

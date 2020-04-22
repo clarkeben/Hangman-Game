@@ -107,6 +107,8 @@ extension UILabel {
     }
 }
 
+//MARK: - UITableViewCell extensions
+
 extension UITableViewCell {
     
         func fadeInCell() {
@@ -119,6 +121,8 @@ extension UITableViewCell {
             }
         }
 }
+
+//MARK: - UItableView Extensions
 
 extension UITableView {
     
