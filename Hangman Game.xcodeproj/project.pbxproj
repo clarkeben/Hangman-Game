@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		14411B95243F0D670011B085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B94243F0D670011B085 /* AppDelegate.swift */; };
 		14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B96243F0D670011B085 /* SceneDelegate.swift */; };
-		14411B99243F0D670011B085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B98243F0D670011B085 /* ViewController.swift */; };
+		14411B99243F0D670011B085 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B98243F0D670011B085 /* GameViewController.swift */; };
 		14411B9C243F0D670011B085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9A243F0D670011B085 /* Main.storyboard */; };
 		14411B9E243F0D6F0011B085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9D243F0D6F0011B085 /* Assets.xcassets */; };
 		14411BA1243F0D6F0011B085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9F243F0D6F0011B085 /* LaunchScreen.storyboard */; };
@@ -17,15 +17,20 @@
 		1454E6F824503B7600B5F2BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454E6F724503B7600B5F2BD /* SettingsViewController.swift */; };
 		146F681B244A184200E02E6D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F681A244A184200E02E6D /* WelcomeViewController.swift */; };
 		146F681D244A1C4F00E02E6D /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F681C244A1C4F00E02E6D /* ViewExtensions.swift */; };
+		147AD45F24525F6400CD6736 /* backgroundmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 147AD45E24525F6400CD6736 /* backgroundmusic.mp3 */; };
+		147AD4612452618700CD6736 /* wrong-answer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 147AD4602452618600CD6736 /* wrong-answer.mp3 */; };
+		147AD4632452619E00CD6736 /* correct-answer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 147AD4622452619D00CD6736 /* correct-answer.mp3 */; };
+		147AD4652452DE6900CD6736 /* button-pressed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 147AD4642452DE6900CD6736 /* button-pressed.mp3 */; };
 		1482E7622441C4B50032B210 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1482E7612441C4B40032B210 /* words.txt */; };
 		1486FC9D2449B6CF003FB3B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486FC9C2449B6CF003FB3B5 /* Constants.swift */; };
+		14DBFDA024517D5800ECDD2D /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DBFD9F24517D5800ECDD2D /* MusicPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14411B91243F0D670011B085 /* Hangman Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangman Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14411B94243F0D670011B085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14411B96243F0D670011B085 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14411B98243F0D670011B085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14411B98243F0D670011B085 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		14411B9B243F0D670011B085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14411B9D243F0D6F0011B085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14411BA0243F0D6F0011B085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,8 +39,13 @@
 		1454E6F724503B7600B5F2BD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		146F681A244A184200E02E6D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		146F681C244A1C4F00E02E6D /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		147AD45E24525F6400CD6736 /* backgroundmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundmusic.mp3; sourceTree = "<group>"; };
+		147AD4602452618600CD6736 /* wrong-answer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "wrong-answer.mp3"; sourceTree = "<group>"; };
+		147AD4622452619D00CD6736 /* correct-answer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "correct-answer.mp3"; sourceTree = "<group>"; };
+		147AD4642452DE6900CD6736 /* button-pressed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "button-pressed.mp3"; sourceTree = "<group>"; };
 		1482E7612441C4B40032B210 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		1486FC9C2449B6CF003FB3B5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		14DBFD9F24517D5800ECDD2D /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,10 @@
 				14411BA2243F0D6F0011B085 /* Info.plist */,
 				1482E7612441C4B40032B210 /* words.txt */,
 				1486FC9C2449B6CF003FB3B5 /* Constants.swift */,
+				147AD45E24525F6400CD6736 /* backgroundmusic.mp3 */,
+				147AD4602452618600CD6736 /* wrong-answer.mp3 */,
+				147AD4622452619D00CD6736 /* correct-answer.mp3 */,
+				147AD4642452DE6900CD6736 /* button-pressed.mp3 */,
 			);
 			path = "Hangman Game";
 			sourceTree = "<group>";
@@ -85,11 +99,12 @@
 		14F902762446FAE6008F0579 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				14411B98243F0D670011B085 /* ViewController.swift */,
+				14411B98243F0D670011B085 /* GameViewController.swift */,
 				146F681A244A184200E02E6D /* WelcomeViewController.swift */,
-				146F681C244A1C4F00E02E6D /* ViewExtensions.swift */,
 				1454E6F5244EEC0A00B5F2BD /* HowToPlayTableViewController.swift */,
 				1454E6F724503B7600B5F2BD /* SettingsViewController.swift */,
+				14DBFD9F24517D5800ECDD2D /* MusicPlayer.swift */,
+				146F681C244A1C4F00E02E6D /* ViewExtensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,6 +186,10 @@
 				14411B9E243F0D6F0011B085 /* Assets.xcassets in Resources */,
 				1482E7622441C4B50032B210 /* words.txt in Resources */,
 				14411B9C243F0D670011B085 /* Main.storyboard in Resources */,
+				147AD45F24525F6400CD6736 /* backgroundmusic.mp3 in Resources */,
+				147AD4612452618700CD6736 /* wrong-answer.mp3 in Resources */,
+				147AD4652452DE6900CD6736 /* button-pressed.mp3 in Resources */,
+				147AD4632452619E00CD6736 /* correct-answer.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,8 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14411B99243F0D670011B085 /* ViewController.swift in Sources */,
+				14411B99243F0D670011B085 /* GameViewController.swift in Sources */,
 				146F681B244A184200E02E6D /* WelcomeViewController.swift in Sources */,
+				14DBFDA024517D5800ECDD2D /* MusicPlayer.swift in Sources */,
 				14411B95243F0D670011B085 /* AppDelegate.swift in Sources */,
 				14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */,
 				146F681D244A1C4F00E02E6D /* ViewExtensions.swift in Sources */,

@@ -18,28 +18,18 @@ struct K {
     static let howToPlaySegue = "goToHowToPlay"
     static let settingsSegue = "goToSettings"
     
-    /*enum difficulty {
-     case hard
-     case medium
-     case easy
-     }
-     
-     static func returnDifficulty(difficultyChosen: difficulty) -> Int {
-     switch difficultyChosen {
-     case .hard:
-     return 5
-     case .medium:
-     return 10
-     case .easy:
-     return 20
-     }
-     }
-     
-     struct Difficulty {
-     static let hard = "Hard"
-     static let medium = "Medium"
-     static let easy = "Easy"
-     }*/
+    struct Audio {
+        // Keys
+        static let bgMusicKey = "Sound"
+        static let fxSoundKey = "SoundFX"
+        static let volumeKey = "Volume"
+        
+        // Music/sound constants
+        static let bgMusic = "backgroundmusic"
+        static let correctAnswerSound = "correct-answer"
+        static let wrongAnswerSound = "wrong-answer"
+        static let buttonPressedSound = "button-pressed"
+    }
     
     struct rules {
         
