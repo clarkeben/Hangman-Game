@@ -14,34 +14,42 @@ class MusicPlayer {
     static let sharedHelper = MusicPlayer()
     var audioPlayer: AVAudioPlayer?
     
+    let defaults = UserDefaults.standard
+    lazy var soundOn = defaults.object(forKey: K.Audio.bgMusicKey) as! Bool
+    lazy var fxSoundOn = defaults.object(forKey: K.Audio.fxSoundKey) as! Bool
+    lazy var volume = defaults.object(forKey: K.Audio.volumeKey) as! Float
     
-    func playBGMusic(playBGMusic: Bool, volume: Float) {
+    
+    func playBGMusic() {
         let bgMusicURL = NSURL(fileURLWithPath: Bundle.main.path(forResource: K.Audio.bgMusic, ofType: "mp3")!)
         
-        if playBGMusic {
+        if soundOn {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: bgMusicURL as URL)
                 audioPlayer?.numberOfLoops = -1
                 audioPlayer?.prepareToPlay()
                 audioPlayer?.play()
                 audioPlayer?.volume = volume
+                print("playing music")
             } catch {
                 print("Issue playing file")
             }
         } else {
+            print("Did not play")
             return
         }
     }
     
-    func playSound(soundURL: String, playFXSound: Bool) {
+    func playSound(soundURL: String) {
         
         let soundURL = NSURL(fileURLWithPath: Bundle.main.path(forResource: soundURL, ofType: "mp3")!)
         
-        if playFXSound {
+        if fxSoundOn {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: soundURL as URL)
                 audioPlayer?.numberOfLoops = 0
                 audioPlayer?.prepareToPlay()
+                audioPlayer?.volume = 0.5
                 audioPlayer?.play()
             } catch {
                 print("Error playing FX Sounds")
@@ -53,11 +61,3 @@ class MusicPlayer {
         
     }
 }
-
-
-/* import AVFoundation  //import at the top
- 
- var player: AVAudioPlayer?  //declare in code
- 
- MusicHelper.sharedHelper.playBackgroundMusic() //paste in viewDidLoad
- */

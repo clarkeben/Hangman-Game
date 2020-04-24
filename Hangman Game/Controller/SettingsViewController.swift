@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SettingsViewController: UIViewController {
-
-    let defaults = UserDefaults.standard
-    var soundOn = true
-    var soundFXOn = true
-    var currentVolume: Float = 1.0
     
     @IBOutlet weak var soundSwitch: UISwitch!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var soundFXSwitch: UISwitch!
     
+    let defaults = UserDefaults.standard
+    var soundOn = true
+    var soundFXOn = true
+    var currentVolume: Float = 1.0
+    
+    var player: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,6 @@ class SettingsViewController: UIViewController {
         
         if sender.isOn == true {
             defaults.set(true, forKey: "Sound")
-            print("Sound is on")
         } else {
             defaults.set(false, forKey: "Sound")
             print("Sound is off")

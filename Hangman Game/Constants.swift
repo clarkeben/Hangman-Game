@@ -19,7 +19,16 @@ struct K {
     static let settingsSegue = "goToSettings"
     
     struct Audio {
-        static let bgMusic = ""
+        // Keys
+        static let bgMusicKey = "Sound"
+        static let fxSoundKey = "SoundFX"
+        static let volumeKey = "Volume"
+        
+        // Music/sound constants
+        static let bgMusic = "backgroundmusic"
+        static let correctAnswerSound = "correct-answer"
+        static let wrongAnswerSound = "wrong-answer"
+        static let buttonPressedSound = "button-pressed"
     }
     
     struct rules {
