@@ -104,17 +104,24 @@ class GameViewController: UIViewController {
         
     }
     
-    func loadGame() {
+    @objc func loadGame() {
         // Read data from disk on BG thread
+        /*DispatchQueue.global(qos: .userInitiated).async {
+         [weak self] in
+         }*/
         
-        if let fileURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
+        if let fileURL = Bundle.main.url(forResource: "wordss", withExtension: "txt") {
             if let wordContents = try? String(contentsOf: fileURL) {
                 var lines = wordContents.components(separatedBy: "\n")
                 lines.shuffle()
                 wordStrings += lines
             }
         } else {
-            showAlertAction(title: "Error", message: "There was an error fetching data, please try again!", actionClosure: {})
+            showAlertAction(title: "Error", message: "There was an error fetching data, please try again!", actionClosure: {
+                [weak self] in
+                self?.navigationController?.popToRootViewController(animated: true)
+            })
+            return
         }
         
         loadWord()
@@ -138,6 +145,7 @@ class GameViewController: UIViewController {
     }
     
     func loadWord() {
+        
         wordLetterArray = [String]()
         word = ""
         maskedWord = ""

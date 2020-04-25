@@ -111,15 +111,15 @@ extension UILabel {
 
 extension UITableViewCell {
     
-        func fadeInCell() {
-            let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -10, 0)
-            self.layer.transform = rotationTransform
-            self.alpha = 0
-            
-            UIView.animate(withDuration: 1.0) {
-                self.alpha = 1.0
-            }
+    func fadeInCell() {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -10, 0)
+        self.layer.transform = rotationTransform
+        self.alpha = 0
+        
+        UIView.animate(withDuration: 1.0) {
+            self.alpha = 1.0
         }
+    }
 }
 
 //MARK: - UItableView Extensions
@@ -130,7 +130,7 @@ extension UITableView {
         self.reloadData()
         let tableViewHeight = self.bounds.size.height
         let cells = self.visibleCells
-    
+        
         var delayCounter = 0
         
         for cell in cells {
