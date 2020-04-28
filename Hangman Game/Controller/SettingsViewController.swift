@@ -42,6 +42,7 @@ class SettingsViewController: UIViewController {
         
         if sender.isOn == true {
             defaults.set(true, forKey: "Sound")
+            playButtonSound()
         } else {
             defaults.set(false, forKey: "Sound")
             print("Sound is off")
@@ -51,10 +52,9 @@ class SettingsViewController: UIViewController {
     @IBAction func soundFXSwitch(_ sender: UISwitch) {
         if sender.isOn == true {
             defaults.set(true, forKey: "SoundFX")
-            print("Sound FX On")
+            playButtonSound()
         } else {
             defaults.set(false, forKey: "SoundFX")
-            print("SoundFX OFF")
         }
     }
     
@@ -62,5 +62,9 @@ class SettingsViewController: UIViewController {
     @IBAction func volumeChanged(_ sender: Any) {
         defaults.set(volumeSlider.value, forKey: "Volume")
     }
+    
+    func playButtonSound() {
+         MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
+     }
     
 }

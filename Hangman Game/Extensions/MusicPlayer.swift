@@ -35,7 +35,7 @@ class MusicPlayer {
                 print("Issue playing file")
             }
         } else {
-            print("Did not play")
+            audioPlayer?.stop()
             return
         }
     }
@@ -56,6 +56,7 @@ class MusicPlayer {
             }
             
         } else {
+            audioPlayer?.stop()
             return
         }
         

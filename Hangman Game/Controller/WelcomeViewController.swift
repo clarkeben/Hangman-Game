@@ -21,21 +21,44 @@ class WelcomeViewController: UIViewController {
     
     var player: AVAudioPlayer?
     
+    let defaults = UserDefaults.standard
+    var totalScore = 0 {
+        didSet {
+            totalScoreLabel.text = "Total Score: \(totalScore)"
+        }
+    }
+    var soundFXOn = true
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        
+        if let score = defaults.integer(forKey: K.scoreKey) as? Int {
+            totalScore = score
+        } else {
+            totalScore = 0
+        }
+        
+        if let soundFXStatus = defaults.bool(forKey: K.Audio.fxSoundKey) as? Bool {
+            soundFXOn = soundFXStatus
+        } else {
+            soundFXOn = true
+        }
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //MusicPlayer.sharedHelper.playBGMusic()
-
+        // Uncomment the  line below if you want to play Background music
+        // MusicPlayer.sharedHelper.playBGMusic()
+        
         // Button animations 
         titleLabel.typingTextAnimation(text: K.appName, timeInterval: 0.1)
         playBtn.fadeInBtn(duration: 1.0)
         settingsBtn.fadeInBtn(duration: 1.0)
         howToPlayBtn.fadeInBtn(duration: 1.0)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,11 +83,9 @@ class WelcomeViewController: UIViewController {
     
     
     func playButtonSound() {
-        // check to see if the FX audio is allowed
-        
         MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
     }
     
     
-        
+    
 }

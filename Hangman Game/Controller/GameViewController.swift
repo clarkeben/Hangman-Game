@@ -15,6 +15,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var guessesRemainingLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
     
+    let defaults = UserDefaults.standard
+    var totalScore = 0 {
+        didSet {
+            defaults.set(totalScore, forKey: K.scoreKey)
+            print(totalScore)
+        }
+    }
     
     var wordLetterArray = [String]()
     var word = ""
@@ -33,7 +40,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    // Consider adding loading screen
     var livesRemaining = 10 {
         didSet {
             guessesRemainingLabel.text = "\(livesRemaining) guesses left"
@@ -43,11 +49,12 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         title = K.appName
         navigationController?.navigationBar.prefersLargeTitles =  true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
+        
+        totalScore = defaults.integer(forKey: K.scoreKey)
         
         loadGame()
     }
@@ -83,9 +90,11 @@ class GameViewController: UIViewController {
             
             maskedWord = maskedWordArray.joined()
             score += 1
+            totalScore += 1
             
         } else {
             score -= 1
+            totalScore -= 1
             livesRemaining -= 1
         }
         
@@ -104,16 +113,12 @@ class GameViewController: UIViewController {
         
     }
     
-    @objc func loadGame() {
-        // Read data from disk on BG thread
-        /*DispatchQueue.global(qos: .userInitiated).async {
-         [weak self] in
-         }*/
-        
-        if let fileURL = Bundle.main.url(forResource: "wordss", withExtension: "txt") {
+    func loadGame() {
+        if let fileURL = Bundle.main.url(forResource: K.wordsURL.fileName, withExtension: K.wordsURL.fileExtension) {
             if let wordContents = try? String(contentsOf: fileURL) {
                 var lines = wordContents.components(separatedBy: "\n")
                 lines.shuffle()
+                
                 wordStrings += lines
             }
         } else {
@@ -123,7 +128,6 @@ class GameViewController: UIViewController {
             })
             return
         }
-        
         loadWord()
     }
     

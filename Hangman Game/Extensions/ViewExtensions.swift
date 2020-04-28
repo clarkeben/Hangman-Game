@@ -14,9 +14,12 @@ import UIKit
 extension GameViewController {
     
     func showAlertAction(title: String, message: String, actionTitle: String = "OK", actionClosure: @escaping () -> Void){
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
-        self.present(ac, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            [weak self] in
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
+            self?.present(ac, animated: true, completion: nil)
+        }
     }
     
 }

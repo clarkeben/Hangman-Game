@@ -10,8 +10,8 @@ import UIKit
 
 class HowToPlayTableViewController: UITableViewController {
     
-    var rulesTitle = K.rules.gamesRulesTitle
-    var rules = K.rules.gamesRules
+    var rulesTitle = rulesData.gamesRulesTitle
+    var rules = rulesData.gamesRules
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class HowToPlayTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.rules.cellName, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.rulesCellName, for: indexPath)
         cell.textLabel?.text = rulesTitle[indexPath.row]
         cell.detailTextLabel?.text = rules[indexPath.row]
         return cell
