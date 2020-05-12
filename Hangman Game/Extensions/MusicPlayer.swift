@@ -15,9 +15,9 @@ class MusicPlayer {
     var audioPlayer: AVAudioPlayer?
     
     let defaults = UserDefaults.standard
-    lazy var soundOn = defaults.object(forKey: K.Audio.bgMusicKey) as! Bool
-    lazy var fxSoundOn = defaults.object(forKey: K.Audio.fxSoundKey) as! Bool
-    lazy var volume = defaults.object(forKey: K.Audio.volumeKey) as! Float
+    lazy var soundOn = defaults.object(forKey: K.Audio.bgMusicKey) as? Bool ?? true
+    lazy var fxSoundOn = defaults.object(forKey: K.Audio.fxSoundKey) as? Bool ?? true
+    lazy var volume = defaults.object(forKey: K.Audio.volumeKey) as? Float ?? 1.0
     
     
     func playBGMusic() {
@@ -42,14 +42,14 @@ class MusicPlayer {
     
     func playSound(soundURL: String) {
         
-        let soundURL = NSURL(fileURLWithPath: Bundle.main.path(forResource: soundURL, ofType: "mp3")!)
+        let soundURL = NSURL(fileURLWithPath: Bundle.main.path(forResource: soundURL, ofType: "wav")!)
         
         if fxSoundOn {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: soundURL as URL)
                 audioPlayer?.numberOfLoops = 0
                 audioPlayer?.prepareToPlay()
-                audioPlayer?.volume = 0.5
+                audioPlayer?.volume = 0.3
                 audioPlayer?.play()
             } catch {
                 print("Error playing FX Sounds")

@@ -33,6 +33,7 @@ struct K {
         static let bgMusic = "backgroundmusic"
         static let correctAnswerSound = "correct-answer"
         static let wrongAnswerSound = "wrong-answer"
+        static let gameWonSound = "game-won"
         static let buttonPressedSound = "button-pressed"
     }
     

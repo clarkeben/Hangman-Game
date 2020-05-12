@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -14,15 +15,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessesRemainingLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
+    var player: AVAudioPlayer?
     
     let defaults = UserDefaults.standard
     var totalScore = 0 {
         didSet {
             defaults.set(totalScore, forKey: K.scoreKey)
-            print(totalScore)
+            //print(totalScore)
         }
     }
-    
+        
     var wordLetterArray = [String]()
     var word = ""
     
@@ -91,11 +93,13 @@ class GameViewController: UIViewController {
             maskedWord = maskedWordArray.joined()
             score += 1
             totalScore += 1
+            playSound(sound: K.Audio.correctAnswerSound)
             
         } else {
             score -= 1
             totalScore -= 1
             livesRemaining -= 1
+            playSound(sound: K.Audio.wrongAnswerSound)
         }
         
         sender.isEnabled = false
@@ -138,6 +142,7 @@ class GameViewController: UIViewController {
             
             if maskedWord == word {
                 showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman", actionTitle: "Restart", actionClosure: self.loadWord)
+                playSound(sound: K.Audio.gameWonSound)
                 nextLevel()
             }
             
@@ -179,6 +184,10 @@ class GameViewController: UIViewController {
         level += 1
         levelCompleted = true
         navigationItem.rightBarButtonItem?.isEnabled = true
+    }
+    
+    func playSound(sound: String) {
+        MusicPlayer.sharedHelper.playSound(soundURL: sound)
     }
     
 }

@@ -44,6 +44,8 @@ class WelcomeViewController: UIViewController {
         } else {
             soundFXOn = true
         }
+        
+        
     }
     
     
