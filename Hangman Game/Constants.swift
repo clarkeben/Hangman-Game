@@ -11,7 +11,7 @@ import Foundation
 struct K {
     
     // VC Titles
-    static let appName = "Hangman ☠️"
+    static let appName = "Hangman"
     static let settingsVCName = "Settings ⚙️"
     static let howTopPlayVCName = "How To Play 🕹️"
     
@@ -39,6 +39,13 @@ struct K {
     
     struct Fonts {
         static let retroGaming = "RetroGaming"
+    }
+    
+    struct Colours {
+        static let bgColour = "BackgroundColour"
+        static let buttonColour = "PinkColour"
+        static let highlightColour = "TurquoiseColour"
+        static let labelColour = "WhiteColour"
     }
     
     struct wordsURL {

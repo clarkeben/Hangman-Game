@@ -32,6 +32,7 @@ class WelcomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        setNeedsStatusBarAppearanceUpdate()
         
         if let score = defaults.integer(forKey: K.scoreKey) as? Int {
             totalScore = score
@@ -54,6 +55,10 @@ class WelcomeViewController: UIViewController {
         formatUI()
         
         animateLoadScreen()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
+        .lightContent
     }
     
 //    override var prefersStatusBarHidden: Bool {
@@ -87,7 +92,7 @@ class WelcomeViewController: UIViewController {
     
     private func animateLoadScreen() {
         // Button animations
-        titleLabel.typingTextAnimation(text: K.appName.uppercased(), timeInterval: 0.1)
+        titleLabel.typingTextAnimation(text: K.appName.uppercased(), timeInterval: 0.2)
         playBtn.fadeInBtn(duration: 1.0)
         settingsBtn.fadeInBtn(duration: 1.0)
         howToPlayBtn.fadeInBtn(duration: 1.0)
@@ -101,11 +106,11 @@ class WelcomeViewController: UIViewController {
         titleLabel.layer.shadowOpacity = 1.0
         titleLabel.layer.masksToBounds = false
         titleLabel.layer.shouldRasterize = true
-        titleLabel.font = UIFont(name: K.Fonts.retroGaming, size: 44.0)
+        titleLabel.font = UIFont(name: K.Fonts.retroGaming, size: 46.0)
         
-        playBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
-        settingsBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
-        howToPlayBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
+        playBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+        settingsBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+        howToPlayBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
         
         playBtn.setTitleColor(UIColor.white, for: .normal)
         settingsBtn.setTitleColor(UIColor.white, for: .normal)

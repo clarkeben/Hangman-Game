@@ -21,7 +21,6 @@ class GameViewController: UIViewController {
     var totalScore = 0 {
         didSet {
             defaults.set(totalScore, forKey: K.scoreKey)
-            //print(totalScore)
         }
     }
         
@@ -44,7 +43,7 @@ class GameViewController: UIViewController {
     
     var livesRemaining = 10 {
         didSet {
-            guessesRemainingLabel.text = "\(livesRemaining) guesses left"
+            guessesRemainingLabel.text = "\(livesRemaining) lives left"
         }
     }
     
@@ -57,6 +56,8 @@ class GameViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
         
         totalScore = defaults.integer(forKey: K.scoreKey)
+        
+        formatUI()
         
         loadGame()
     }
@@ -103,6 +104,7 @@ class GameViewController: UIViewController {
         }
         
         sender.isEnabled = false
+        sender.setTitleColor(UIColor(named: K.Colours.buttonColour), for: .disabled)
         wordLabel.text = maskedWord
         
         // check to see if the game is completed + reset
@@ -188,6 +190,15 @@ class GameViewController: UIViewController {
     
     func playSound(sound: String) {
         MusicPlayer.sharedHelper.playSound(soundURL: sound)
+    }
+    
+    private func formatUI(){
+        wordLabel.font = UIFont(name: K.Fonts.retroGaming, size: 24.0)
+        
+        for button in letterButtons {
+            button.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
+            button.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
+        }
     }
     
 }
