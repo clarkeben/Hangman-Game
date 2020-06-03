@@ -37,6 +37,10 @@ struct K {
         static let buttonPressedSound = "button-pressed"
     }
     
+    struct Fonts {
+        static let retroGaming = "RetroGaming"
+    }
+    
     struct wordsURL {
         static let fileName = "words"
         static let fileExtension = "txt"

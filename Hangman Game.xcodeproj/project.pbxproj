@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1434DB582487172100666428 /* RetroGaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1434DB572487172100666428 /* RetroGaming.ttf */; };
 		14411B95243F0D670011B085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B94243F0D670011B085 /* AppDelegate.swift */; };
 		14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B96243F0D670011B085 /* SceneDelegate.swift */; };
 		14411B99243F0D670011B085 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B98243F0D670011B085 /* GameViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1434DB572487172100666428 /* RetroGaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RetroGaming.ttf; sourceTree = "<group>"; };
 		14411B91243F0D670011B085 /* Hangman Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangman Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14411B94243F0D670011B085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14411B96243F0D670011B085 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1434DB56248716FC00666428 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1434DB572487172100666428 /* RetroGaming.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		14411B88243F0D670011B085 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 				14F902772446FB00008F0579 /* View */,
 				14F902762446FAE6008F0579 /* Controller */,
 				14181A00245861080074E538 /* Extensions */,
+				1434DB56248716FC00666428 /* Fonts */,
 				14411B9D243F0D6F0011B085 /* Assets.xcassets */,
 				14411B9F243F0D6F0011B085 /* LaunchScreen.storyboard */,
 				14411BA2243F0D6F0011B085 /* Info.plist */,
@@ -201,6 +212,7 @@
 				1482E7622441C4B50032B210 /* words.txt in Resources */,
 				14411B9C243F0D670011B085 /* Main.storyboard in Resources */,
 				147AD45F24525F6400CD6736 /* backgroundmusic.mp3 in Resources */,
+				1434DB582487172100666428 /* RetroGaming.ttf in Resources */,
 				149DC732246B454600803063 /* button-pressed.wav in Resources */,
 				149DC72E246B435300803063 /* game-won.wav in Resources */,
 				149DC72F246B435300803063 /* wrong-answer.wav in Resources */,

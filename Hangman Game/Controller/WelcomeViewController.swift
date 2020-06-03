@@ -44,24 +44,21 @@ class WelcomeViewController: UIViewController {
         } else {
             soundFXOn = true
         }
-        
-        
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the  line below if you want to play Background music
         // MusicPlayer.sharedHelper.playBGMusic()
         
-        // Button animations 
-        titleLabel.typingTextAnimation(text: K.appName, timeInterval: 0.1)
-        playBtn.fadeInBtn(duration: 1.0)
-        settingsBtn.fadeInBtn(duration: 1.0)
-        howToPlayBtn.fadeInBtn(duration: 1.0)
+        formatUI()
         
+        animateLoadScreen()
     }
+    
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -88,6 +85,33 @@ class WelcomeViewController: UIViewController {
         MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
     }
     
+    private func animateLoadScreen() {
+        // Button animations
+        titleLabel.typingTextAnimation(text: K.appName.uppercased(), timeInterval: 0.1)
+        playBtn.fadeInBtn(duration: 1.0)
+        settingsBtn.fadeInBtn(duration: 1.0)
+        howToPlayBtn.fadeInBtn(duration: 1.0)
+    }
+    
+    private func formatUI() {
+        titleLabel.textColor = UIColor.white
+        titleLabel.layer.shadowColor = UIColor.white.cgColor
+        titleLabel.layer.shadowOffset = .zero
+        titleLabel.layer.shadowRadius = 2.0
+        titleLabel.layer.shadowOpacity = 1.0
+        titleLabel.layer.masksToBounds = false
+        titleLabel.layer.shouldRasterize = true
+        titleLabel.font = UIFont(name: K.Fonts.retroGaming, size: 44.0)
+        
+        playBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
+        settingsBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
+        howToPlayBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
+        
+        playBtn.setTitleColor(UIColor.white, for: .normal)
+        settingsBtn.setTitleColor(UIColor.white, for: .normal)
+        howToPlayBtn.setTitleColor(UIColor.white, for: .normal)
+        
+    }
     
     
 }

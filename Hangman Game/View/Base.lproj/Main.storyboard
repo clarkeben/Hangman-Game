@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jtG-lG-Gn0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jtG-lG-Gn0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-be-eU0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="MqE-hJ-wKQ">
                                 <rect key="frame" x="10" y="118" width="394" height="242"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman ☠️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGX-bl-vzJ">
-                                        <rect key="frame" x="111.5" y="0.0" width="171.5" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGX-bl-vzJ">
+                                        <rect key="frame" x="129" y="0.0" width="136.5" height="37"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +47,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrp-CD-YKo">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Play"/>
+                                        <state key="normal" title="TAP TO START"/>
                                         <connections>
                                             <action selector="playBtnPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="OkE-wB-C54"/>
                                         </connections>
@@ -52,7 +55,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-PY-Hja">
                                         <rect key="frame" x="0.0" y="98" width="394" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Settings"/>
+                                        <state key="normal" title="SETTINGS"/>
                                         <connections>
                                             <action selector="settingsBtnPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="4Ef-BR-n0Y"/>
                                         </connections>
@@ -60,7 +63,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQR-bx-U6O">
                                         <rect key="frame" x="0.0" y="196" width="394" height="61"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="How To Play"/>
+                                        <state key="normal" title="HOW TO PLAY"/>
                                         <connections>
                                             <action selector="howToPlayPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="Xtr-ff-QPM"/>
                                         </connections>
@@ -71,11 +74,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="MqE-hJ-wKQ" firstAttribute="top" secondItem="yKN-Ph-Kw2" secondAttribute="top" constant="30" id="8fW-Ma-9U2"/>
+                            <constraint firstItem="NPu-be-eU0" firstAttribute="top" secondItem="e2v-KL-bCx" secondAttribute="top" id="EkL-Jn-NbZ"/>
                             <constraint firstItem="6xx-hK-84N" firstAttribute="leading" secondItem="yKN-Ph-Kw2" secondAttribute="leading" constant="10" id="RwK-1o-YfL"/>
                             <constraint firstItem="6xx-hK-84N" firstAttribute="top" secondItem="MqE-hJ-wKQ" secondAttribute="bottom" constant="80" id="SRf-07-SMA"/>
                             <constraint firstItem="yKN-Ph-Kw2" firstAttribute="bottom" secondItem="6xx-hK-84N" secondAttribute="bottom" constant="165" id="Xas-P3-3FZ"/>
+                            <constraint firstItem="NPu-be-eU0" firstAttribute="leading" secondItem="yKN-Ph-Kw2" secondAttribute="leading" id="aPx-SO-6um"/>
                             <constraint firstItem="MqE-hJ-wKQ" firstAttribute="leading" secondItem="yKN-Ph-Kw2" secondAttribute="leading" constant="10" id="lAs-6Z-Qqe"/>
                             <constraint firstItem="yKN-Ph-Kw2" firstAttribute="trailing" secondItem="6xx-hK-84N" secondAttribute="trailing" constant="10" id="lTG-s2-ch8"/>
+                            <constraint firstAttribute="bottom" secondItem="NPu-be-eU0" secondAttribute="bottom" id="mMV-c9-b0p"/>
+                            <constraint firstItem="NPu-be-eU0" firstAttribute="trailing" secondItem="yKN-Ph-Kw2" secondAttribute="trailing" id="opp-st-PPN"/>
                             <constraint firstItem="yKN-Ph-Kw2" firstAttribute="trailing" secondItem="MqE-hJ-wKQ" secondAttribute="trailing" constant="10" id="w6E-vb-3K4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yKN-Ph-Kw2"/>
@@ -566,4 +573,7 @@
             <point key="canvasLocation" x="2307" y="905"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1806" height="1815"/>
+    </resources>
 </document>
