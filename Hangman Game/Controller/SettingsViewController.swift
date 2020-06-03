@@ -26,7 +26,6 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         title = K.settingsVCName
-        navigationController?.navigationBar.prefersLargeTitles = true
         
         soundOn = defaults.bool(forKey: "Sound")
         soundFXOn = defaults.bool(forKey: "SoundFX")

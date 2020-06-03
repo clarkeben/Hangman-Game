@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>RetroGaming.ttf</string>
+		<string>rainyhearts.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

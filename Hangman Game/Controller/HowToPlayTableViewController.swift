@@ -15,12 +15,16 @@ class HowToPlayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setNeedsStatusBarAppearanceUpdate()
+
         navigationController?.navigationBar.isHidden = false
         
         title = K.howTopPlayVCName
-        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.reloadWithBounceAnimation()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        .lightContent
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,6 +33,12 @@ class HowToPlayTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.rulesCellName, for: indexPath)
+        
+        cell.textLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+        cell.detailTextLabel?.font = UIFont(name: K.Fonts.rainyHearts, size: 20.0)
+        cell.textLabel?.textColor = UIColor(named: K.Colours.labelColour)
+        cell.detailTextLabel?.textColor = UIColor(named: K.Colours.labelColour)
+        
         cell.textLabel?.text = rulesTitle[indexPath.row]
         cell.detailTextLabel?.text = rules[indexPath.row]
         return cell

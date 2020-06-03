@@ -24,7 +24,7 @@ class WelcomeViewController: UIViewController {
     let defaults = UserDefaults.standard
     var totalScore = 0 {
         didSet {
-            totalScoreLabel.text = "Total Score: \(totalScore)"
+            totalScoreLabel.text = "Total Points: \(totalScore)"
         }
     }
     var soundFXOn = true
@@ -71,24 +71,24 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func playBtnPressed(_ sender: Any) {
-        playButtonSound()
+        //playButtonSound()
         performSegue(withIdentifier: K.gameSeugue, sender: self)
     }
     
     @IBAction func settingsBtnPressed(_ sender: Any) {
-        playButtonSound()
+        //playButtonSound()
         performSegue(withIdentifier: K.settingsSegue, sender: self)
     }
     
     @IBAction func howToPlayPressed(_ sender: Any) {
-        playButtonSound()
+        //playButtonSound()
         performSegue(withIdentifier: K.howToPlaySegue, sender: self)
     }
     
-    
-    func playButtonSound() {
+    // Uncomment for button sound
+    /*func playButtonSound() {
         MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
-    }
+    }*/
     
     private func animateLoadScreen() {
         // Button animations
@@ -99,7 +99,7 @@ class WelcomeViewController: UIViewController {
     }
     
     private func formatUI() {
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor(named: K.Colours.labelColour)
         titleLabel.layer.shadowColor = UIColor.white.cgColor
         titleLabel.layer.shadowOffset = .zero
         titleLabel.layer.shadowRadius = 2.0
@@ -108,13 +108,16 @@ class WelcomeViewController: UIViewController {
         titleLabel.layer.shouldRasterize = true
         titleLabel.font = UIFont(name: K.Fonts.retroGaming, size: 46.0)
         
+        totalScoreLabel.font = UIFont(name: K.Fonts.rainyHearts, size: 22)
+        totalScoreLabel.textColor = UIColor(named: K.Colours.labelColour)
+        
         playBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
         settingsBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
         howToPlayBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
         
-        playBtn.setTitleColor(UIColor.white, for: .normal)
-        settingsBtn.setTitleColor(UIColor.white, for: .normal)
-        howToPlayBtn.setTitleColor(UIColor.white, for: .normal)
+        playBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
+        settingsBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
+        howToPlayBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
         
     }
     

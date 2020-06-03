@@ -15,6 +15,9 @@ struct K {
     static let settingsVCName = "Settings ⚙️"
     static let howTopPlayVCName = "How To Play 🕹️"
     
+    // Hangman image name
+    static let hangmanImg = "hangman"
+    
     // Segues
     static let gameSeugue = "goToGame"
     static let howToPlaySegue = "goToHowToPlay"
@@ -39,6 +42,7 @@ struct K {
     
     struct Fonts {
         static let retroGaming = "RetroGaming"
+        static let rainyHearts = "rainyhearts"
     }
     
     struct Colours {

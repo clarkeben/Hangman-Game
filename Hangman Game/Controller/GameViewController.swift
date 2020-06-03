@@ -11,6 +11,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var hangmanImgView: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessesRemainingLabel: UILabel!
@@ -35,9 +36,15 @@ class GameViewController: UIViewController {
     var levelCompleted = false
     var usedLetters = ""
     
+    var hangmanImgNumber = 0 {
+        didSet {
+            hangmanImgView.image = UIImage(named: "\(K.hangmanImg)\(hangmanImgNumber)")
+        }
+    }
+    
     var score = 0 {
         didSet {
-            scoreLabel.text = "Score: \(score)"
+            scoreLabel.text = "\(score) points"
         }
     }
     
@@ -52,7 +59,6 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         title = K.appName
-        navigationController?.navigationBar.prefersLargeTitles =  true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
         
         totalScore = defaults.integer(forKey: K.scoreKey)
@@ -73,6 +79,7 @@ class GameViewController: UIViewController {
         
         score -= 1
         livesRemaining -= 1
+        hangmanImgNumber += 1
         
         navigationItem.rightBarButtonItem?.isEnabled = false
     }
@@ -100,6 +107,7 @@ class GameViewController: UIViewController {
             score -= 1
             totalScore -= 1
             livesRemaining -= 1
+            hangmanImgNumber += 1
             playSound(sound: K.Audio.wrongAnswerSound)
         }
         
@@ -114,6 +122,7 @@ class GameViewController: UIViewController {
             for button in letterButtons {
                 button.isEnabled = true
             }
+            hangmanImgNumber = 0
             levelCompleted = false
         }
         
@@ -193,10 +202,15 @@ class GameViewController: UIViewController {
     }
     
     private func formatUI(){
-        wordLabel.font = UIFont(name: K.Fonts.retroGaming, size: 24.0)
+        hangmanImgView.image = UIImage(named: "\(K.hangmanImg)\(hangmanImgNumber)")
+        scoreLabel.font = UIFont(name: K.Fonts.rainyHearts, size: 20.0)
+        scoreLabel.textColor = UIColor(named: K.Colours.bgColour)
+        scoreLabel.backgroundColor = UIColor(named: K.Colours.highlightColour)
+        guessesRemainingLabel.font = UIFont(name: K.Fonts.rainyHearts, size: 20.0)
+        wordLabel.font = UIFont(name: K.Fonts.retroGaming, size: 36.0)
         
         for button in letterButtons {
-            button.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 22.0)
+            button.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 24.0)
             button.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
         }
     }

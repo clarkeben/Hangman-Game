@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1428EA4224885414003A0D7F /* rainyhearts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1428EA4124885413003A0D7F /* rainyhearts.ttf */; };
 		1434DB582487172100666428 /* RetroGaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1434DB572487172100666428 /* RetroGaming.ttf */; };
 		14411B95243F0D670011B085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B94243F0D670011B085 /* AppDelegate.swift */; };
 		14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B96243F0D670011B085 /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1428EA4124885413003A0D7F /* rainyhearts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainyhearts.ttf; sourceTree = "<group>"; };
 		1434DB572487172100666428 /* RetroGaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RetroGaming.ttf; sourceTree = "<group>"; };
 		14411B91243F0D670011B085 /* Hangman Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangman Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14411B94243F0D670011B085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				1434DB572487172100666428 /* RetroGaming.ttf */,
+				1428EA4124885413003A0D7F /* rainyhearts.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				1434DB582487172100666428 /* RetroGaming.ttf in Resources */,
 				149DC732246B454600803063 /* button-pressed.wav in Resources */,
 				149DC72E246B435300803063 /* game-won.wav in Resources */,
+				1428EA4224885414003A0D7F /* rainyhearts.ttf in Resources */,
 				149DC72F246B435300803063 /* wrong-answer.wav in Resources */,
 				149DC730246B435300803063 /* correct-answer.wav in Resources */,
 			);
