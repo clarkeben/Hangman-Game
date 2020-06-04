@@ -18,6 +18,7 @@ extension GameViewController {
             [weak self] in
             let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
+            ac.formatUI()
             self?.present(ac, animated: true, completion: nil)
         }
     }
@@ -148,4 +149,16 @@ extension UITableView {
             delayCounter += 1
         }
     }
+}
+
+//MARK: - UIAlertController Extension
+
+extension UIAlertController {
+    
+    func formatUI(){
+        self.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.darkGray
+        self.view.tintColor = UIColor(named: K.Colours.buttonColour)
+    }
+    
+    
 }

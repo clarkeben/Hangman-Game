@@ -24,7 +24,7 @@ class GameViewController: UIViewController {
             defaults.set(totalScore, forKey: K.scoreKey)
         }
     }
-        
+    
     var wordLetterArray = [String]()
     var word = ""
     
@@ -57,6 +57,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         
         title = K.appName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
@@ -67,6 +68,11 @@ class GameViewController: UIViewController {
         
         loadGame()
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        .lightContent
+    }
+    
     
     @objc func giveClue() {
         
@@ -118,9 +124,14 @@ class GameViewController: UIViewController {
         // check to see if the game is completed + reset
         checkToSeeIfCompleted()
         
+        if livesRemaining <= 1 {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+        
         if levelCompleted {
             for button in letterButtons {
                 button.isEnabled = true
+                navigationItem.rightBarButtonItem?.isEnabled = true
             }
             hangmanImgNumber = 0
             levelCompleted = false
@@ -158,7 +169,7 @@ class GameViewController: UIViewController {
             }
             
         } else {
-            showAlertAction(title: "💀", message: "The hangman caught you", actionTitle: "Restart", actionClosure: self.loadWord)
+            showAlertAction(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", actionTitle: "Restart", actionClosure: self.loadWord)
             nextLevel()
         }
         
@@ -194,7 +205,7 @@ class GameViewController: UIViewController {
     func nextLevel() {
         level += 1
         levelCompleted = true
-        navigationItem.rightBarButtonItem?.isEnabled = true
+        //navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
     func playSound(sound: String) {
@@ -202,7 +213,10 @@ class GameViewController: UIViewController {
     }
     
     private func formatUI(){
+        view.backgroundColor = UIColor(named: K.Colours.bgColour)
+        
         hangmanImgView.image = UIImage(named: "\(K.hangmanImg)\(hangmanImgNumber)")
+        scoreLabel.text = "0 points"
         scoreLabel.font = UIFont(name: K.Fonts.rainyHearts, size: 20.0)
         scoreLabel.textColor = UIColor(named: K.Colours.bgColour)
         scoreLabel.backgroundColor = UIColor(named: K.Colours.highlightColour)

@@ -432,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2737.68115942029" y="126.5625"/>
+            <point key="canvasLocation" x="4513" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pGc-Fh-j2F">
@@ -460,28 +460,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="cQx-Wi-FJj">
-                                <rect key="frame" x="20" y="188" width="374" height="173"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cQx-Wi-FJj">
+                                <rect key="frame" x="20" y="188" width="374" height="122"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="235" translatesAutoresizingMaskIntoConstraints="NO" id="tDt-qy-l5R">
-                                        <rect key="frame" x="0.0" y="0.0" width="346" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-8G-mSR">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2b-fY-dNV">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound FX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-TT-jdP">
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfg-Ld-NaW">
-                                                <rect key="frame" x="297" y="0.0" width="51" height="31"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-20-9Ks">
+                                                <rect key="frame" x="172" y="0.0" width="174" height="31"/>
                                                 <connections>
-                                                    <action selector="soundSwitch:" destination="bOx-MS-Wrg" eventType="valueChanged" id="mhC-eV-ZHg"/>
+                                                    <action selector="soundFXSwitch:" destination="bOx-MS-Wrg" eventType="valueChanged" id="dLW-Rc-UED"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wwm-D3-3NP">
-                                        <rect key="frame" x="0.0" y="71" width="360" height="31"/>
+                                        <rect key="frame" x="0.0" y="91" width="360" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-pd-21C">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
@@ -500,27 +500,13 @@
                                             </slider>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="192" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-8G-mSR">
-                                        <rect key="frame" x="0.0" y="142" width="334" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound FX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-TT-jdP">
-                                                <rect key="frame" x="0.0" y="0.0" width="93" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-20-9Ks">
-                                                <rect key="frame" x="285" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="soundFXSwitch:" destination="bOx-MS-Wrg" eventType="valueChanged" id="dLW-Rc-UED"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WNY-8G-mSR" secondAttribute="trailing" constant="30" id="Cnu-ap-5eF"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="BackgroundColour"/>
                         <constraints>
                             <constraint firstItem="f7g-FK-21B" firstAttribute="trailing" secondItem="cQx-Wi-FJj" secondAttribute="trailing" constant="20" id="DTF-WH-ywL"/>
                             <constraint firstItem="cQx-Wi-FJj" firstAttribute="leading" secondItem="f7g-FK-21B" secondAttribute="leading" constant="20" id="Wt3-A7-ITA"/>
@@ -530,14 +516,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="ca3-sl-BEO"/>
                     <connections>
+                        <outlet property="soundFXLabel" destination="YEv-TT-jdP" id="xBa-oT-BT0"/>
                         <outlet property="soundFXSwitch" destination="DDl-20-9Ks" id="ysC-Pm-Rxe"/>
-                        <outlet property="soundSwitch" destination="lfg-Ld-NaW" id="577-i2-5Lb"/>
+                        <outlet property="volumeLabel" destination="ayj-pd-21C" id="jRc-du-sQt"/>
                         <outlet property="volumeSlider" destination="naW-IE-9EV" id="obf-2a-z4X"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToGame" id="W0T-VY-SQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhP-3d-EfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600.0000000000002" y="906.69642857142856"/>
+            <point key="canvasLocation" x="2903" y="-246"/>
         </scene>
         <!--How To Play Table View Controller-->
         <scene sceneID="tDS-bE-Nr0">
@@ -581,12 +569,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="83F-u9-2BO"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToGame" id="Qh5-kv-NKC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBa-Lf-dv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307" y="905"/>
+            <point key="canvasLocation" x="2903" y="601"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W0T-VY-SQc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Background" width="1806" height="1815"/>
         <image name="hangman10" width="4490" height="3808"/>

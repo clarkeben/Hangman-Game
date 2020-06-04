@@ -13,17 +13,28 @@ class HowToPlayTableViewController: UITableViewController {
     var rulesTitle = rulesData.gamesRulesTitle
     var rules = rulesData.gamesRules
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = K.howTopPlayVCName
+        view.backgroundColor = UIColor(named: K.Colours.bgColour)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-
-        navigationController?.navigationBar.isHidden = false
         
-        title = K.howTopPlayVCName
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(goToGameScreen))
+        
         tableView.reloadWithBounceAnimation()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.title = " "
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
         .lightContent
     }
     
@@ -42,6 +53,10 @@ class HowToPlayTableViewController: UITableViewController {
         cell.textLabel?.text = rulesTitle[indexPath.row]
         cell.detailTextLabel?.text = rules[indexPath.row]
         return cell
+    }
+    
+    @objc func goToGameScreen() {
+        performSegue(withIdentifier: K.gameSeugue, sender: self)
     }
     
     

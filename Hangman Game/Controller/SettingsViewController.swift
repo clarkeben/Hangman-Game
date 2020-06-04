@@ -11,42 +11,54 @@ import AVFoundation
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var soundSwitch: UISwitch!
+    @IBOutlet weak var volumeLabel: UILabel!
+    @IBOutlet weak var soundFXLabel: UILabel!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var soundFXSwitch: UISwitch!
     
     let defaults = UserDefaults.standard
-    var soundOn = true
     var soundFXOn = true
     var currentVolume: Float = 1.0
     
     var player: AVAudioPlayer?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+        navigationItem.title = K.settingsVCName
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = K.settingsVCName
+        formatUI()
         
-        soundOn = defaults.bool(forKey: "Sound")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(goToGameScreen))
+        
+        volumeLabel.alpha = 0
+        soundFXLabel.alpha = 0
+        
+        UIView.animate(withDuration: 1.0) {
+            self.volumeLabel.alpha = 1.0
+            self.soundFXLabel.alpha = 1.0
+        }
+        
         soundFXOn = defaults.bool(forKey: "SoundFX")
         currentVolume = defaults.float(forKey: "Volume")
         
-        soundSwitch.setOn(soundOn, animated: true)
         soundFXSwitch.setOn(soundFXOn, animated: true)
         volumeSlider.setValue(currentVolume, animated: true)
     }
     
-
-    @IBAction func soundSwitch(_ sender: UISwitch) {
-        
-        if sender.isOn == true {
-            defaults.set(true, forKey: "Sound")
-            playButtonSound()
-        } else {
-            defaults.set(false, forKey: "Sound")
-            print("Sound is off")
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = " "
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     
     @IBAction func soundFXSwitch(_ sender: UISwitch) {
         if sender.isOn == true {
@@ -57,13 +69,29 @@ class SettingsViewController: UIViewController {
         }
     }
     
-
+    
     @IBAction func volumeChanged(_ sender: Any) {
         defaults.set(volumeSlider.value, forKey: "Volume")
     }
     
-    func playButtonSound() {
-         MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
-     }
+    private func playButtonSound() {
+        MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
+    }
+    
+    @objc func goToGameScreen() {
+        performSegue(withIdentifier: K.gameSeugue, sender: self)
+    }
+    
+    private func formatUI() {
+        view.backgroundColor = UIColor(named: K.Colours.bgColour)
+        volumeLabel.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+        soundFXLabel.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+        volumeLabel.textColor = UIColor(named: K.Colours.labelColour)
+        soundFXLabel.textColor = UIColor(named: K.Colours.labelColour)
+        
+        volumeSlider.tintColor = UIColor(named: K.Colours.buttonColour)
+        soundFXSwitch.onTintColor = UIColor(named: K.Colours.buttonColour)
+        soundFXSwitch.tintColor = UIColor(named: K.Colours.buttonColour)
+    }
     
 }

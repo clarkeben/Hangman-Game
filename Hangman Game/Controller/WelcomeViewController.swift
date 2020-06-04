@@ -56,17 +56,15 @@ class WelcomeViewController: UIViewController {
         
         animateLoadScreen()
     }
-    
+        
     override var preferredStatusBarStyle: UIStatusBarStyle  {
         .lightContent
     }
     
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.navigationItem.title = " "
         navigationController?.isNavigationBarHidden = false
     }
     
@@ -99,6 +97,8 @@ class WelcomeViewController: UIViewController {
     }
     
     private func formatUI() {
+        view.backgroundColor = UIColor(named: K.Colours.bgColour)
+        
         titleLabel.textColor = UIColor(named: K.Colours.labelColour)
         titleLabel.layer.shadowColor = UIColor.white.cgColor
         titleLabel.layer.shadowOffset = .zero
@@ -118,7 +118,6 @@ class WelcomeViewController: UIViewController {
         playBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
         settingsBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
         howToPlayBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
-        
     }
     
     

@@ -17,20 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         
-        /*UINavigationBar.appearance().titleTextAttributes = [
-         NSAttributedString.Key.foregroundColor: UIColor(named: K.Colours.labelColour),
-         NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 27.0)!
-         ]
-         UINavigationBar.appearance().backgroundColor = UIColor(named: K.Colours.bgColour)
-         UINavigationBar.appearance().barTintColor = UIColor(named: K.Colours.bgColour)
-         UINavigationBar.appearance().isTranslucent = false*/
-        
         UINavigationBar.appearance().barTintColor = UIColor(named: K.Colours.bgColour)
         UINavigationBar.appearance().tintColor = UIColor(named: K.Colours.buttonColour)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                            NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 27.0)!]
+                                                            NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 22.0)!]
         UINavigationBar.appearance().isTranslucent = false
-        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 15.0)!], for: .normal)
         
         return true
     }

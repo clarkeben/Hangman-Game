@@ -13,7 +13,7 @@ struct K {
     // VC Titles
     static let appName = "Hangman"
     static let settingsVCName = "Settings ⚙️"
-    static let howTopPlayVCName = "How To Play 🕹️"
+    static let howTopPlayVCName = "How To Play 🕹"
     
     // Hangman image name
     static let hangmanImg = "hangman"
