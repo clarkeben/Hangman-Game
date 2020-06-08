@@ -57,7 +57,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
         
         title = K.appName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
@@ -68,12 +67,7 @@ class GameViewController: UIViewController {
         
         loadGame()
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        .lightContent
-    }
-    
-    
+        
     @objc func giveClue() {
         
         let filteredLetters = wordLetterArray.filter { !$0.contains(usedLetters) }
@@ -112,8 +106,8 @@ class GameViewController: UIViewController {
         } else {
             score -= 1
             totalScore -= 1
-            livesRemaining -= 1
             hangmanImgNumber += 1
+            livesRemaining -= 1
             playSound(sound: K.Audio.wrongAnswerSound)
         }
         
@@ -161,9 +155,8 @@ class GameViewController: UIViewController {
     func checkToSeeIfCompleted() {
         
         if livesRemaining > 0 {
-            
             if maskedWord == word {
-                showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman", actionTitle: "Restart", actionClosure: self.loadWord)
+                showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman!", actionTitle: "Restart", actionClosure: self.loadWord)
                 playSound(sound: K.Audio.gameWonSound)
                 nextLevel()
             }
@@ -205,7 +198,6 @@ class GameViewController: UIViewController {
     func nextLevel() {
         level += 1
         levelCompleted = true
-        //navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
     func playSound(sound: String) {

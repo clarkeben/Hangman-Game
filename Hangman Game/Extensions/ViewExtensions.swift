@@ -156,7 +156,12 @@ extension UITableView {
 extension UIAlertController {
     
     func formatUI(){
-        self.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.darkGray
+        guard let title = self.title else { return }
+        guard let message = self.message else { return }
+        
+        self.setValue(NSAttributedString(string: message, attributes: [NSAttributedString.Key.font: UIFont(name: K.Fonts.rainyHearts, size: 18)!]), forKey: "attributedMessage")
+        self.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 18.0)]), forKey: "attributedTitle")
+        //self.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.darkGray
         self.view.tintColor = UIColor(named: K.Colours.buttonColour)
     }
     

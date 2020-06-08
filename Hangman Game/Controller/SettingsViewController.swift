@@ -24,7 +24,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNeedsStatusBarAppearanceUpdate()
+        
         navigationItem.title = K.settingsVCName
     }
     
@@ -54,12 +54,7 @@ class SettingsViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationItem.title = " "
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
-    
-    
+        
     @IBAction func soundFXSwitch(_ sender: UISwitch) {
         if sender.isOn == true {
             defaults.set(true, forKey: "SoundFX")

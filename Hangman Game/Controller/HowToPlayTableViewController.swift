@@ -21,7 +21,6 @@ class HowToPlayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
         
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(goToGameScreen))
@@ -32,10 +31,6 @@ class HowToPlayTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationItem.title = " "
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle  {
-        .lightContent
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="RetroGaming.ttf">
-            <string>RetroGaming</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,196 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-ha-xgq">
-                                <rect key="frame" x="73" y="210" width="268" height="476"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kfE-Ki-SUI">
-                                        <rect key="frame" x="31.5" y="0.0" width="205" height="61"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-cG-a6Q">
-                                                <rect key="frame" x="0.0" y="0.0" width="34" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="PinkColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pak-Sm-Pee">
-                                                <rect key="frame" x="54" y="0.0" width="36" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfj-zq-SWV">
-                                                <rect key="frame" x="110" y="0.0" width="38" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMA-Dk-FU5">
-                                                <rect key="frame" x="168" y="0.0" width="37" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UHV-et-9rh">
-                                        <rect key="frame" x="17.5" y="83" width="233" height="61"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVe-jY-Bn3">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIG-fH-gPi">
-                                                <rect key="frame" x="52" y="0.0" width="30" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NU-aH-cz3">
-                                                <rect key="frame" x="102" y="0.0" width="39.5" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="PinkColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-Sv-Oyu">
-                                                <rect key="frame" x="161.5" y="0.0" width="38" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="PinkColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYy-4H-a4v">
-                                                <rect key="frame" x="219.5" y="0.0" width="13.5" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K7v-Q2-83E">
-                                        <rect key="frame" x="36" y="166" width="196.5" height="61"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="J" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6w-pF-qYK">
-                                                <rect key="frame" x="0.0" y="0.0" width="27" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5M-0d-oTq">
-                                                <rect key="frame" x="47" y="0.0" width="35" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIT-Cg-hNr">
-                                                <rect key="frame" x="102" y="0.0" width="29" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbZ-hW-ayT">
-                                                <rect key="frame" x="151" y="0.0" width="45.5" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="PinkColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yvp-KJ-hyR">
-                                        <rect key="frame" x="0.0" y="249" width="268" height="61"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd8-5w-gCY">
-                                                <rect key="frame" x="0.0" y="0.0" width="38" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="PinkColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-KM-X1U">
-                                                <rect key="frame" x="58" y="0.0" width="40" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-jA-hZL">
-                                                <rect key="frame" x="118" y="0.0" width="34" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0P-bx-9qd">
-                                                <rect key="frame" x="172" y="0.0" width="40" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXO-Li-jjO">
-                                                <rect key="frame" x="232" y="0.0" width="36" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rd0-TZ-RVL">
-                                        <rect key="frame" x="37" y="332" width="194" height="61"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-XI-gZZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="34" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQk-HJ-cbz">
-                                                <rect key="frame" x="54" y="0.0" width="30" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="U" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-Qz-jWd">
-                                                <rect key="frame" x="104" y="0.0" width="38" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51t-zk-WS2">
-                                                <rect key="frame" x="162" y="0.0" width="32" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bjE-OH-uFY">
-                                        <rect key="frame" x="65" y="415" width="138" height="61"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4F-rr-vCr">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xud-dm-rQP">
-                                                <rect key="frame" x="52" y="0.0" width="34" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Z" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QO-EQ-U3H">
-                                                <rect key="frame" x="106" y="0.0" width="32" height="61"/>
-                                                <fontDescription key="fontDescription" name="RetroGaming" family="Retro Gaming" pointSize="52"/>
-                                                <color key="textColor" name="WhiteColour"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadScreenV2" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-eR-Dlr">
+                                <rect key="frame" x="20" y="20" width="374" height="856"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColour"/>
                         <constraints>
-                            <constraint firstItem="MhG-ha-xgq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4RU-07-zch"/>
-                            <constraint firstItem="MhG-ha-xgq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ldy-5S-1Ll"/>
+                            <constraint firstItem="bhx-eR-Dlr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="20" id="4OX-GR-huc"/>
+                            <constraint firstItem="bhx-eR-Dlr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6dn-m7-JLh"/>
+                            <constraint firstAttribute="trailing" secondItem="bhx-eR-Dlr" secondAttribute="trailing" constant="20" id="LfV-kl-Xlx"/>
+                            <constraint firstItem="bhx-eR-Dlr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fLY-9x-kRO"/>
+                            <constraint firstAttribute="bottom" secondItem="bhx-eR-Dlr" secondAttribute="bottom" constant="20" id="hUB-NL-CIz"/>
+                            <constraint firstItem="bhx-eR-Dlr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="mE7-Nb-RGz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -221,14 +38,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LoadScreenV2" width="368" height="306"/>
         <namedColor name="BackgroundColour">
             <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="PinkColour">
-            <color red="0.83499997854232788" green="0.2669999897480011" blue="0.9100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="WhiteColour">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
