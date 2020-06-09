@@ -55,8 +55,8 @@ extension UIButton {
         pulsation.fromValue = 0.96 //98
         pulsation.toValue = 1.0
         pulsation.autoreverses = true
-        pulsation.repeatCount = .infinity
-        pulsation.initialVelocity = 0.3 //0.5
+        pulsation.repeatCount = 3 //.infinity
+        pulsation.initialVelocity = 0.5 //0.5
         pulsation.damping = 1.0
         layer.add(pulsation, forKey: nil)
     }
@@ -160,7 +160,7 @@ extension UIAlertController {
         guard let message = self.message else { return }
         
         self.setValue(NSAttributedString(string: message, attributes: [NSAttributedString.Key.font: UIFont(name: K.Fonts.rainyHearts, size: 18)!]), forKey: "attributedMessage")
-        self.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 18.0)]), forKey: "attributedTitle")
+        self.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont(name: K.Fonts.retroGaming, size: 18.0)!]), forKey: "attributedTitle")
         //self.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.darkGray
         self.view.tintColor = UIColor(named: K.Colours.buttonColour)
     }

@@ -127,10 +127,8 @@ class GameViewController: UIViewController {
                 button.isEnabled = true
                 navigationItem.rightBarButtonItem?.isEnabled = true
             }
-            hangmanImgNumber = 0
             levelCompleted = false
-        }
-        
+        }        
     }
     
     func loadGame() {
@@ -156,7 +154,7 @@ class GameViewController: UIViewController {
         
         if livesRemaining > 0 {
             if maskedWord == word {
-                showAlertAction(title: "Congratualtions 🎉", message: "You've beat the hangman!", actionTitle: "Restart", actionClosure: self.loadWord)
+                showAlertAction(title: "Congratulations 🎉", message: "You've beat the hangman!", actionTitle: "Restart", actionClosure: self.loadWord)
                 playSound(sound: K.Audio.gameWonSound)
                 nextLevel()
             }
@@ -176,6 +174,7 @@ class GameViewController: UIViewController {
         maskedWordArray = [String]()
         
         livesRemaining = 10
+        hangmanImgNumber = 0
         
         //  Save word into an array + string
         word = wordStrings[level]

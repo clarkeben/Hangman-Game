@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadScreenV2" translatesAutoresizingMaskIntoConstraints="NO" id="bhx-eR-Dlr">
-                                <rect key="frame" x="20" y="20" width="374" height="856"/>
+                                <rect key="frame" x="115" y="371.5" width="184" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="Ajq-CF-r2D"/>
+                                    <constraint firstAttribute="height" constant="153" id="txB-Lm-rwm"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColour"/>
                         <constraints>
-                            <constraint firstItem="bhx-eR-Dlr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="20" id="4OX-GR-huc"/>
                             <constraint firstItem="bhx-eR-Dlr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6dn-m7-JLh"/>
-                            <constraint firstAttribute="trailing" secondItem="bhx-eR-Dlr" secondAttribute="trailing" constant="20" id="LfV-kl-Xlx"/>
                             <constraint firstItem="bhx-eR-Dlr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fLY-9x-kRO"/>
-                            <constraint firstAttribute="bottom" secondItem="bhx-eR-Dlr" secondAttribute="bottom" constant="20" id="hUB-NL-CIz"/>
-                            <constraint firstItem="bhx-eR-Dlr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="mE7-Nb-RGz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

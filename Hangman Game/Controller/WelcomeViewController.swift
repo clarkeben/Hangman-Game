@@ -56,7 +56,7 @@ class WelcomeViewController: UIViewController {
         
         animateLoadScreen()
     }
-        
+    
     override var preferredStatusBarStyle: UIStatusBarStyle  {
         .lightContent
     }
@@ -68,25 +68,40 @@ class WelcomeViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
-    @IBAction func playBtnPressed(_ sender: Any) {
+    @IBAction func playBtnPressed(_ sender: UIButton) {
         //playButtonSound()
-        performSegue(withIdentifier: K.gameSeugue, sender: self)
+        sender.pulsateBtn()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()  + 0.6) {
+            [weak self] in
+            self?.performSegue(withIdentifier: K.gameSeugue, sender: self)
+        }
     }
     
-    @IBAction func settingsBtnPressed(_ sender: Any) {
+    @IBAction func settingsBtnPressed(_ sender: UIButton) {
         //playButtonSound()
-        performSegue(withIdentifier: K.settingsSegue, sender: self)
+        sender.pulsateBtn()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            [weak self] in
+            self?.performSegue(withIdentifier: K.settingsSegue, sender: self)
+        }
     }
     
-    @IBAction func howToPlayPressed(_ sender: Any) {
+    @IBAction func howToPlayPressed(_ sender: UIButton) {
         //playButtonSound()
-        performSegue(withIdentifier: K.howToPlaySegue, sender: self)
+        sender.pulsateBtn()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            [weak self] in
+            self?.performSegue(withIdentifier: K.howToPlaySegue, sender: self)
+        }
     }
     
     // Uncomment for button sound
     /*func playButtonSound() {
-        MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
-    }*/
+     MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
+     }*/
     
     private func animateLoadScreen() {
         // Button animations
