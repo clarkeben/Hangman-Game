@@ -8,8 +8,7 @@ The Hangman game uses the MVC design pattern and loads a list of words from the 
 The app is actively upgraded to adopt the latest features of iOS and Swift language. 
 
 ## 📸 Screenshots
-
-![Hangman Game iOS app](https://images-benclarke.s3-eu-west-1.amazonaws.com/hangman-ios-app.png)
+![Hangman Game iOS App](https://user-images.githubusercontent.com/40464267/84443530-b3ec2d80-ac37-11ea-8a1b-197bfb701e46.png)
 
 ## 🙌 Why is this Hangman game awesome?
 * 🕹 **Retro arcade design**
@@ -25,7 +24,7 @@ And currently in the works:
 
 ## 🏃🏽‍♀️ How to get started 
 The following guide will help you get started and download the repo:
-* [Cloing a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+* [Cloning a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ## Requirements
 * Xcode 9
