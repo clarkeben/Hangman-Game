@@ -9,7 +9,7 @@ The app is actively upgraded to adopt the latest features of iOS and Swift langu
 
 ## 📸 Screenshots
 
-![Hangman Game iOS app](https://images-benclarke.s3-eu-west-1.amazonaws.com/hangman-ios-app.png "Hangman Game iOS")
+![Hangman Game iOS app](https://images-benclarke.s3-eu-west-1.amazonaws.com/hangman-ios-app.png)
 
 ## 🙌 Why is this Hangman game awesome?
 * 🕹 **Retro arcade design**
