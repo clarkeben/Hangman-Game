@@ -149,6 +149,24 @@ extension UITableView {
             delayCounter += 1
         }
     }
+    
+    
+    func reloadLeftToRight() {
+        self.reloadData()
+        let cells = visibleCells
+        var delayCounter = 0
+        
+        for cell in cells {
+            cell.frame.origin.x = -cell.frame.width
+            
+            UIView.animate(withDuration: 0.7, delay: 0.07 * Double(delayCounter), usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+                cell.frame.origin.x = 0
+            }, completion: nil)
+            
+            delayCounter += 1
+        }
+    }
+    
 }
 
 //MARK: - UIAlertController Extension

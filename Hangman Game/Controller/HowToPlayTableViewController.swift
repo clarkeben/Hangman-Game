@@ -50,6 +50,10 @@ class HowToPlayTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     @objc func goToGameScreen() {
         performSegue(withIdentifier: K.gameSeugue, sender: self)
     }
