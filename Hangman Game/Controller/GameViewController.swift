@@ -9,7 +9,9 @@
 import UIKit
 import AVFoundation
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameProtocol {
+   
+    
     
     @IBOutlet weak var hangmanImgView: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -25,6 +27,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    let gameManager = GameManager()
     var wordLetterArray = [String]()
     var word = ""
     
@@ -32,7 +35,7 @@ class GameViewController: UIViewController {
     var maskedWordArray = [String]()
     
     var wordStrings = [String]()
-    var level = 1
+    var level = 0
     var levelCompleted = false
     var usedLetters = ""
     
@@ -54,6 +57,10 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +68,13 @@ class GameViewController: UIViewController {
         title = K.appName
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clue", style: .plain, target: self, action: #selector(giveClue))
         
+        gameManager.delegate = self
+        
+        gameManager.fetchData()
+        
         totalScore = defaults.integer(forKey: K.scoreKey)
         
         formatUI()
-        
-        loadGame()
     }
         
     @objc func giveClue() {
@@ -131,21 +140,9 @@ class GameViewController: UIViewController {
         }        
     }
     
-    func loadGame() {
-        if let fileURL = Bundle.main.url(forResource: K.wordsURL.fileName, withExtension: K.wordsURL.fileExtension) {
-            if let wordContents = try? String(contentsOf: fileURL) {
-                var lines = wordContents.components(separatedBy: "\n")
-                lines.shuffle()
-                
-                wordStrings += lines
-            }
-        } else {
-            showAlertAction(title: "Error", message: "There was an error fetching data, please try again!", actionClosure: {
-                [weak self] in
-                self?.navigationController?.popToRootViewController(animated: true)
-            })
-            return
-        }
+    
+    func gameDataFetched(_ data: [String]) {
+        wordStrings += data
         loadWord()
     }
     
