@@ -15,8 +15,7 @@
 		14411B9C243F0D670011B085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9A243F0D670011B085 /* Main.storyboard */; };
 		14411B9E243F0D6F0011B085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9D243F0D6F0011B085 /* Assets.xcassets */; };
 		14411BA1243F0D6F0011B085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14411B9F243F0D6F0011B085 /* LaunchScreen.storyboard */; };
-		1451FC2625A8909700FB7A42 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451FC2525A8909700FB7A42 /* GameManager.swift */; };
-		1451FC2925A890AB00FB7A42 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451FC2825A890AB00FB7A42 /* GameProtocol.swift */; };
+		1451FC2625A8909700FB7A42 /* GameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451FC2525A8909700FB7A42 /* GameDataManager.swift */; };
 		1454E6F6244EEC0A00B5F2BD /* HowToPlayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454E6F5244EEC0A00B5F2BD /* HowToPlayTableViewController.swift */; };
 		1454E6F824503B7600B5F2BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454E6F724503B7600B5F2BD /* SettingsViewController.swift */; };
 		146F681B244A184200E02E6D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146F681A244A184200E02E6D /* WelcomeViewController.swift */; };
@@ -43,8 +42,7 @@
 		14411B9D243F0D6F0011B085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14411BA0243F0D6F0011B085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14411BA2243F0D6F0011B085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1451FC2525A8909700FB7A42 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		1451FC2825A890AB00FB7A42 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		1451FC2525A8909700FB7A42 /* GameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataManager.swift; sourceTree = "<group>"; };
 		1454E6F5244EEC0A00B5F2BD /* HowToPlayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayTableViewController.swift; sourceTree = "<group>"; };
 		1454E6F724503B7600B5F2BD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		146F681A244A184200E02E6D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -108,24 +106,47 @@
 		14411B93243F0D670011B085 /* Hangman Game */ = {
 			isa = PBXGroup;
 			children = (
-				14411B94243F0D670011B085 /* AppDelegate.swift */,
-				14411B96243F0D670011B085 /* SceneDelegate.swift */,
 				14F902782446FB10008F0579 /* Model */,
 				14F902772446FB00008F0579 /* View */,
 				14F902762446FAE6008F0579 /* Controller */,
+				1466026025A92F5300D60097 /* Config */,
 				14181A00245861080074E538 /* Extensions */,
-				1434DB56248716FC00666428 /* Fonts */,
+				1466025E25A92F1400D60097 /* Helpers */,
 				14411B9D243F0D6F0011B085 /* Assets.xcassets */,
-				14411B9F243F0D6F0011B085 /* LaunchScreen.storyboard */,
 				14411BA2243F0D6F0011B085 /* Info.plist */,
+			);
+			path = "Hangman Game";
+			sourceTree = "<group>";
+		};
+		1466025E25A92F1400D60097 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1434DB56248716FC00666428 /* Fonts */,
+				1466025F25A92F2300D60097 /* Audio */,
 				1486FC9C2449B6CF003FB3B5 /* Constants.swift */,
 				147AD45E24525F6400CD6736 /* backgroundmusic.mp3 */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1466025F25A92F2300D60097 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
 				149DC72D246B435300803063 /* correct-answer.wav */,
 				149DC72B246B435300803063 /* game-won.wav */,
 				149DC72C246B435300803063 /* wrong-answer.wav */,
 				149DC731246B454600803063 /* button-pressed.wav */,
 			);
-			path = "Hangman Game";
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		1466026025A92F5300D60097 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				14411B94243F0D670011B085 /* AppDelegate.swift */,
+				14411B96243F0D670011B085 /* SceneDelegate.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		14F902762446FAE6008F0579 /* Controller */ = {
@@ -143,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				14411B9A243F0D670011B085 /* Main.storyboard */,
+				14411B9F243F0D6F0011B085 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,8 +174,7 @@
 			children = (
 				1473F3F12454C4870048A423 /* RulesData.swift */,
 				1482E7612441C4B40032B210 /* words.txt */,
-				1451FC2525A8909700FB7A42 /* GameManager.swift */,
-				1451FC2825A890AB00FB7A42 /* GameProtocol.swift */,
+				1451FC2525A8909700FB7A42 /* GameDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,9 +261,8 @@
 				14411B99243F0D670011B085 /* GameViewController.swift in Sources */,
 				146F681B244A184200E02E6D /* WelcomeViewController.swift in Sources */,
 				14DBFDA024517D5800ECDD2D /* MusicPlayer.swift in Sources */,
-				1451FC2625A8909700FB7A42 /* GameManager.swift in Sources */,
+				1451FC2625A8909700FB7A42 /* GameDataManager.swift in Sources */,
 				14411B95243F0D670011B085 /* AppDelegate.swift in Sources */,
-				1451FC2925A890AB00FB7A42 /* GameProtocol.swift in Sources */,
 				14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */,
 				146F681D244A1C4F00E02E6D /* ViewExtensions.swift in Sources */,
 				1454E6F6244EEC0A00B5F2BD /* HowToPlayTableViewController.swift in Sources */,

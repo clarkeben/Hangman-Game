@@ -27,7 +27,7 @@ class GameViewController: UIViewController, GameProtocol {
         }
     }
     
-    let gameManager = GameManager()
+    let gameManager = GameDataManager()
     var wordLetterArray = [String]()
     var word = ""
     

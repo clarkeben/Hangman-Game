@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol GameProtocol: AnyObject {
+    func gameDataFetched(_ data: [String])
+}
+
 class GameDataManager {
     
     weak var delegate: GameProtocol?
