@@ -11,8 +11,6 @@ import AVFoundation
 
 class GameViewController: UIViewController, GameProtocol {
    
-    
-    
     @IBOutlet weak var hangmanImgView: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
@@ -151,13 +149,19 @@ class GameViewController: UIViewController, GameProtocol {
         
         if livesRemaining > 0 {
             if maskedWord == word {
-                showAlertAction(title: "Congratulations 🎉", message: "You've beat the hangman!", actionTitle: "Restart", actionClosure: self.loadWord)
+//                showAlertAction(title: "Congratulations 🎉", message: "You've beat the hangman!", actionTitle: "Restart", actionClosure: self.loadWord)
+                
+                gameFinishedAlert(title: "Congratulations 🎉", message: "You've beat the hangman!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
+                
                 playSound(sound: K.Audio.gameWonSound)
                 nextLevel()
             }
             
         } else {
-            showAlertAction(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", actionTitle: "Restart", actionClosure: self.loadWord)
+            //showAlertAction(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", actionTitle: "Restart", actionClosure: self.loadWord)
+            
+            gameFinishedAlert(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
+            
             nextLevel()
         }
         

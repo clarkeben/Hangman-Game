@@ -23,6 +23,28 @@ extension GameViewController {
         }
     }
     
+    func gameFinishedAlert(title: String, message: String, word: String, actionTitle: String = "OK", actionClosure: @escaping () -> Void){
+        DispatchQueue.main.async {
+            [weak self] in
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            ac.addAction(UIAlertAction(title: "Define word", style: .default, handler: { (UIAlertAction) in
+                
+                if UIReferenceLibraryViewController.dictionaryHasDefinition(forTerm: word) {
+                    let ref: UIReferenceLibraryViewController = UIReferenceLibraryViewController(term: word)
+                    self?.present(ref, animated: true, completion: nil)
+                }
+                actionClosure()
+            }))
+            ac.addAction(UIAlertAction(title: actionTitle, style: .default, handler: {(action: UIAlertAction!) in actionClosure()}))
+            
+            ac.formatUI()
+            
+            self?.present(ac, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 //MARK: - UIButton Extensions
@@ -51,7 +73,7 @@ extension UIButton {
     // Pulsation animation
     func pulsateBtn() {
         let pulsation = CASpringAnimation(keyPath: "transform.scale")
-        pulsation.duration = 0.5
+        pulsation.duration = 0.4
         pulsation.fromValue = 0.96 //98
         pulsation.toValue = 1.0
         pulsation.autoreverses = true
