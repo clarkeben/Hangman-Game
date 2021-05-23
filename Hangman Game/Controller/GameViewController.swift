@@ -84,7 +84,7 @@ class GameViewController: UIViewController, GameProtocol {
         
         showAlertAction(title: "🕵️", message: "The current word is \(wordLen) characters, have you considered using the letter '\(randomElement)'?", actionClosure: {})
         
-        score -= 1
+        //score -= 1
         livesRemaining -= 1
         hangmanImgNumber += 1
         
@@ -106,13 +106,10 @@ class GameViewController: UIViewController, GameProtocol {
             }
             
             maskedWord = maskedWordArray.joined()
-            score += 1
-            totalScore += 1
+
             playSound(sound: K.Audio.correctAnswerSound)
             
         } else {
-            score -= 1
-            totalScore -= 1
             hangmanImgNumber += 1
             livesRemaining -= 1
             playSound(sound: K.Audio.wrongAnswerSound)
@@ -149,16 +146,21 @@ class GameViewController: UIViewController, GameProtocol {
         
         if livesRemaining > 0 {
             if maskedWord == word {
-//                showAlertAction(title: "Congratulations 🎉", message: "You've beat the hangman!", actionTitle: "Restart", actionClosure: self.loadWord)
+                
+                score += 1
+                totalScore += 1
                 
                 gameFinishedAlert(title: "Congratulations 🎉", message: "You've beat the hangman!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
+    
                 
                 playSound(sound: K.Audio.gameWonSound)
                 nextLevel()
             }
             
         } else {
-            //showAlertAction(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", actionTitle: "Restart", actionClosure: self.loadWord)
+
+            score -= 1
+            totalScore -= 1
             
             gameFinishedAlert(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
             
