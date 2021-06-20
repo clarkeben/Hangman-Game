@@ -82,9 +82,10 @@ class GameViewController: UIViewController, GameProtocol {
         
         let wordLen = wordLetterArray.count
         
+        Vibration.medium.vibrate()
+        
         showAlertAction(title: "🕵️", message: "The current word is \(wordLen) characters, have you considered using the letter '\(randomElement)'?", actionClosure: {})
         
-        //score -= 1
         livesRemaining -= 1
         hangmanImgNumber += 1
         
@@ -107,11 +108,14 @@ class GameViewController: UIViewController, GameProtocol {
             
             maskedWord = maskedWordArray.joined()
 
+            Vibration.success.vibrate()
             playSound(sound: K.Audio.correctAnswerSound)
             
         } else {
             hangmanImgNumber += 1
             livesRemaining -= 1
+            
+            Vibration.error.vibrate()
             playSound(sound: K.Audio.wrongAnswerSound)
         }
         
@@ -152,7 +156,7 @@ class GameViewController: UIViewController, GameProtocol {
                 
                 gameFinishedAlert(title: "Congratulations 🎉", message: "You've beat the hangman!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
     
-                
+                Vibration.success.vibrate()
                 playSound(sound: K.Audio.gameWonSound)
                 nextLevel()
             }
@@ -163,6 +167,8 @@ class GameViewController: UIViewController, GameProtocol {
             totalScore -= 1
             
             gameFinishedAlert(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
+            
+            Vibration.rigid.vibrate()
             
             nextLevel()
         }

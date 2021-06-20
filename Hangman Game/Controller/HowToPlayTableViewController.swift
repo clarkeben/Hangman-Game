@@ -55,6 +55,7 @@ class HowToPlayTableViewController: UITableViewController {
     }
     
     @objc func goToGameScreen() {
+        Vibration.light.vibrate()
         performSegue(withIdentifier: K.gameSeugue, sender: self)
     }
     

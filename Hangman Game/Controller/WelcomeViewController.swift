@@ -72,6 +72,8 @@ class WelcomeViewController: UIViewController {
         //playButtonSound()
         sender.pulsateBtn()
         
+        Vibration.light.vibrate()
+        
         DispatchQueue.main.asyncAfter(deadline: .now()  + 0.6) {
             [weak self] in
             self?.performSegue(withIdentifier: K.gameSeugue, sender: self)
@@ -82,6 +84,8 @@ class WelcomeViewController: UIViewController {
         //playButtonSound()
         sender.pulsateBtn()
         
+        Vibration.light.vibrate()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             [weak self] in
             self?.performSegue(withIdentifier: K.settingsSegue, sender: self)
@@ -91,6 +95,8 @@ class WelcomeViewController: UIViewController {
     @IBAction func howToPlayPressed(_ sender: UIButton) {
         //playButtonSound()
         sender.pulsateBtn()
+        
+        Vibration.light.vibrate()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             [weak self] in
