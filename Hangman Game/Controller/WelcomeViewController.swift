@@ -27,12 +27,16 @@ class WelcomeViewController: UIViewController {
             totalScoreLabel.text = "Total Points: \(totalScore)"
         }
     }
+    
     var soundFXOn = true
+    var buttonClicked = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         setNeedsStatusBarAppearanceUpdate()
+        
+        buttonClicked = false
         
         if let score = defaults.integer(forKey: K.scoreKey) as? Int {
             totalScore = score
@@ -74,10 +78,14 @@ class WelcomeViewController: UIViewController {
         
         Vibration.light.vibrate()
         
-        DispatchQueue.main.asyncAfter(deadline: .now()  + 0.6) {
-            [weak self] in
-            self?.performSegue(withIdentifier: K.gameSeugue, sender: self)
+        if !buttonClicked {
+            DispatchQueue.main.asyncAfter(deadline: .now()  + 0.6) {
+                [weak self] in
+                self?.performSegue(withIdentifier: K.gameSeugue, sender: self)
+            }
         }
+        
+        buttonClicked = true
     }
     
     @IBAction func settingsBtnPressed(_ sender: UIButton) {
@@ -86,10 +94,15 @@ class WelcomeViewController: UIViewController {
         
         Vibration.light.vibrate()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            [weak self] in
-            self?.performSegue(withIdentifier: K.settingsSegue, sender: self)
+        if !buttonClicked {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                [weak self] in
+                self?.performSegue(withIdentifier: K.settingsSegue, sender: self)
+            }
         }
+        
+        buttonClicked = true
+        
     }
     
     @IBAction func howToPlayPressed(_ sender: UIButton) {
@@ -98,10 +111,15 @@ class WelcomeViewController: UIViewController {
         
         Vibration.light.vibrate()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            [weak self] in
-            self?.performSegue(withIdentifier: K.howToPlaySegue, sender: self)
+        if !buttonClicked {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                [weak self] in
+                self?.performSegue(withIdentifier: K.howToPlaySegue, sender: self)
+            }
         }
+        
+        buttonClicked = true
+
     }
     
     // Uncomment for button sound
