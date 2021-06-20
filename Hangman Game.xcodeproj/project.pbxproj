@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007B9594267FA31700B46AAD /* Vibrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B9593267FA31700B46AAD /* Vibrations.swift */; };
 		1428EA4224885414003A0D7F /* rainyhearts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1428EA4124885413003A0D7F /* rainyhearts.ttf */; };
 		1434DB582487172100666428 /* RetroGaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1434DB572487172100666428 /* RetroGaming.ttf */; };
 		14411B95243F0D670011B085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B94243F0D670011B085 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		007B9593267FA31700B46AAD /* Vibrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrations.swift; sourceTree = "<group>"; };
 		1428EA4124885413003A0D7F /* rainyhearts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainyhearts.ttf; sourceTree = "<group>"; };
 		1434DB572487172100666428 /* RetroGaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RetroGaming.ttf; sourceTree = "<group>"; };
 		14411B91243F0D670011B085 /* Hangman Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangman Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 			children = (
 				14DBFD9F24517D5800ECDD2D /* MusicPlayer.swift */,
 				146F681C244A1C4F00E02E6D /* ViewExtensions.swift */,
+				007B9593267FA31700B46AAD /* Vibrations.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				146F681B244A184200E02E6D /* WelcomeViewController.swift in Sources */,
 				14DBFDA024517D5800ECDD2D /* MusicPlayer.swift in Sources */,
 				1451FC2625A8909700FB7A42 /* GameDataManager.swift in Sources */,
+				007B9594267FA31700B46AAD /* Vibrations.swift in Sources */,
 				14411B95243F0D670011B085 /* AppDelegate.swift in Sources */,
 				14411B97243F0D670011B085 /* SceneDelegate.swift in Sources */,
 				146F681D244A1C4F00E02E6D /* ViewExtensions.swift in Sources */,

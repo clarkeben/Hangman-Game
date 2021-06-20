@@ -462,7 +462,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cQx-Wi-FJj">
-                                <rect key="frame" x="20" y="188" width="374" height="122"/>
+                                <rect key="frame" x="20" y="188" width="374" height="31"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-8G-mSR">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="31"/>
@@ -479,26 +479,6 @@
                                                     <action selector="soundFXSwitch:" destination="bOx-MS-Wrg" eventType="valueChanged" id="dLW-Rc-UED"/>
                                                 </connections>
                                             </switch>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wwm-D3-3NP">
-                                        <rect key="frame" x="0.0" y="91" width="360" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-pd-21C">
-                                                <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="naW-IE-9EV">
-                                                <rect key="frame" x="178" y="0.0" width="184" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="180" id="PLN-id-AGG"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="volumeChanged:" destination="bOx-MS-Wrg" eventType="valueChanged" id="sdo-UY-JWN"/>
-                                                </connections>
-                                            </slider>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -519,8 +499,6 @@
                     <connections>
                         <outlet property="soundFXLabel" destination="YEv-TT-jdP" id="xBa-oT-BT0"/>
                         <outlet property="soundFXSwitch" destination="DDl-20-9Ks" id="ysC-Pm-Rxe"/>
-                        <outlet property="volumeLabel" destination="ayj-pd-21C" id="jRc-du-sQt"/>
-                        <outlet property="volumeSlider" destination="naW-IE-9EV" id="obf-2a-z4X"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToGame" id="W0T-VY-SQc"/>
                     </connections>
                 </viewController>
