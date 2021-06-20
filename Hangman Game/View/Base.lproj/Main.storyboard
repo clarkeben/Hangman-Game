@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="MqE-hJ-wKQ">
-                                <rect key="frame" x="10" y="118" width="394" height="307"/>
+                                <rect key="frame" x="10" y="118" width="394" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGX-bl-vzJ">
                                         <rect key="frame" x="129" y="0.0" width="136.5" height="37"/>
@@ -30,10 +30,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="hangman10" translatesAutoresizingMaskIntoConstraints="NO" id="1wr-Zc-hoN">
-                                        <rect key="frame" x="32" y="50" width="330" height="220"/>
+                                        <rect key="frame" x="32" y="50" width="330" height="203"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Score: 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50j-Yu-U6s">
-                                        <rect key="frame" x="120.5" y="283" width="153" height="24"/>
+                                        <rect key="frame" x="120.5" y="266" width="153" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" name="WhiteColour"/>
                                         <nil key="highlightedColor"/>
@@ -43,8 +43,8 @@
                                     <constraint firstItem="1wr-Zc-hoN" firstAttribute="leading" secondItem="MqE-hJ-wKQ" secondAttribute="leading" constant="32" id="1xX-IK-cDK"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="6xx-hK-84N">
-                                <rect key="frame" x="10" y="505" width="394" height="181"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="6xx-hK-84N">
+                                <rect key="frame" x="10" y="488" width="394" height="231"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrp-CD-YKo">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="39"/>
@@ -55,15 +55,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyG-PY-Hja">
-                                        <rect key="frame" x="0.0" y="71" width="394" height="39"/>
+                                        <rect key="frame" x="0.0" y="64" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="SETTINGS"/>
                                         <connections>
                                             <action selector="settingsBtnPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="4Ef-BR-n0Y"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="job-7l-k8H">
+                                        <rect key="frame" x="0.0" y="128" width="394" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="LEADERBOARD"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQR-bx-U6O">
-                                        <rect key="frame" x="0.0" y="142" width="394" height="39"/>
+                                        <rect key="frame" x="0.0" y="192" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="HOW TO PLAY"/>
                                         <connections>
@@ -76,7 +81,7 @@
                         <viewLayoutGuide key="safeArea" id="yKN-Ph-Kw2"/>
                         <color key="backgroundColor" name="BackgroundColour"/>
                         <constraints>
-                            <constraint firstItem="6xx-hK-84N" firstAttribute="top" secondItem="yKN-Ph-Kw2" secondAttribute="top" constant="417" id="7XO-yS-CEE"/>
+                            <constraint firstItem="6xx-hK-84N" firstAttribute="top" secondItem="yKN-Ph-Kw2" secondAttribute="top" constant="400" id="7XO-yS-CEE"/>
                             <constraint firstItem="MqE-hJ-wKQ" firstAttribute="top" secondItem="yKN-Ph-Kw2" secondAttribute="top" constant="30" id="8fW-Ma-9U2"/>
                             <constraint firstItem="NPu-be-eU0" firstAttribute="top" secondItem="e2v-KL-bCx" secondAttribute="top" id="EkL-Jn-NbZ"/>
                             <constraint firstItem="6xx-hK-84N" firstAttribute="leading" secondItem="yKN-Ph-Kw2" secondAttribute="leading" constant="10" id="RwK-1o-YfL"/>
@@ -92,6 +97,7 @@
                     <navigationItem key="navigationItem" id="Xgb-83-pih"/>
                     <connections>
                         <outlet property="howToPlayBtn" destination="NQR-bx-U6O" id="IAc-6B-Ghs"/>
+                        <outlet property="leaderboardBtn" destination="job-7l-k8H" id="yHn-WD-kIa"/>
                         <outlet property="logoImg" destination="1wr-Zc-hoN" id="nPI-yH-XYe"/>
                         <outlet property="playBtn" destination="rrp-CD-YKo" id="Vvo-lf-ynf"/>
                         <outlet property="settingsBtn" destination="vyG-PY-Hja" id="usy-Ts-P2P"/>
@@ -558,7 +564,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W0T-VY-SQc"/>
+        <segue reference="FIH-3V-ieG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Background" width="1806" height="1815"/>

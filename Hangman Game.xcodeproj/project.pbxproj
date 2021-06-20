@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		007B9594267FA31700B46AAD /* Vibrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007B9593267FA31700B46AAD /* Vibrations.swift */; };
+		007B9597267FB8AC00B46AAD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007B9596267FB8AC00B46AAD /* GameKit.framework */; };
 		1428EA4224885414003A0D7F /* rainyhearts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1428EA4124885413003A0D7F /* rainyhearts.ttf */; };
 		1434DB582487172100666428 /* RetroGaming.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1434DB572487172100666428 /* RetroGaming.ttf */; };
 		14411B95243F0D670011B085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14411B94243F0D670011B085 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		007B9593267FA31700B46AAD /* Vibrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrations.swift; sourceTree = "<group>"; };
+		007B9596267FB8AC00B46AAD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		1428EA4124885413003A0D7F /* rainyhearts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainyhearts.ttf; sourceTree = "<group>"; };
 		1434DB572487172100666428 /* RetroGaming.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RetroGaming.ttf; sourceTree = "<group>"; };
 		14411B91243F0D670011B085 /* Hangman Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hangman Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,12 +67,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007B9597267FB8AC00B46AAD /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		007B9595267FB8AC00B46AAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				007B9596267FB8AC00B46AAD /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		14181A00245861080074E538 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +106,7 @@
 			children = (
 				14411B93243F0D670011B085 /* Hangman Game */,
 				14411B92243F0D670011B085 /* Products */,
+				007B9595267FB8AC00B46AAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -425,7 +437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vikingskullapps.Hangman-Game";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vikingskullapps.Hangman-Word-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -443,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vikingskullapps.Hangman-Game";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vikingskullapps.Hangman-Word-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

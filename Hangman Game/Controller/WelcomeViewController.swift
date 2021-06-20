@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var settingsBtn: UIButton!
     @IBOutlet weak var howToPlayBtn: UIButton!
+    @IBOutlet weak var leaderboardBtn: UIButton!
     
     var player: AVAudioPlayer?
     
@@ -58,7 +59,7 @@ class WelcomeViewController: UIViewController {
         
         formatUI()
         
-        animateLoadScreen()
+        animateViewController()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle  {
@@ -119,7 +120,6 @@ class WelcomeViewController: UIViewController {
         }
         
         buttonClicked = true
-
     }
     
     // Uncomment for button sound
@@ -127,11 +127,12 @@ class WelcomeViewController: UIViewController {
      MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
      }*/
     
-    private func animateLoadScreen() {
+    private func animateViewController() {
         // Button animations
         titleLabel.typingTextAnimation(text: K.appName.uppercased(), timeInterval: 0.2)
         playBtn.fadeInBtn(duration: 1.0)
         settingsBtn.fadeInBtn(duration: 1.0)
+        leaderboardBtn.fadeInBtn(duration: 1.0)
         howToPlayBtn.fadeInBtn(duration: 1.0)
     }
     
@@ -150,13 +151,12 @@ class WelcomeViewController: UIViewController {
         totalScoreLabel.font = UIFont(name: K.Fonts.rainyHearts, size: 22)
         totalScoreLabel.textColor = UIColor(named: K.Colours.labelColour)
         
-        playBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
-        settingsBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
-        howToPlayBtn.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+        let buttons: [UIButton] = [playBtn, settingsBtn, howToPlayBtn, leaderboardBtn]
         
-        playBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
-        settingsBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
-        howToPlayBtn.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
+        buttons.forEach { button in
+            button.titleLabel?.font = UIFont(name: K.Fonts.retroGaming, size: 20.0)
+            button.setTitleColor(UIColor(named: K.Colours.labelColour), for: .normal)
+        }
     }
     
     
