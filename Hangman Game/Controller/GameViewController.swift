@@ -46,7 +46,12 @@ class GameViewController: UIViewController, GameProtocol {
     
     var score = 0 {
         didSet {
-            scoreLabel.text = "\(score) points"
+            if score == 1 {
+                scoreLabel.text = "\(score) point"
+            } else {
+                scoreLabel.text = "\(score) points"
+
+            }
         }
     }
     
@@ -154,7 +159,6 @@ class GameViewController: UIViewController, GameProtocol {
                 
                 score += 1
                 totalScore += 1
-                submitScore(1)
                 
                 gameFinishedAlert(title: "Congratulations 🎉", message: "You've beat the hangman!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
     
@@ -167,7 +171,6 @@ class GameViewController: UIViewController, GameProtocol {
 
             score -= 1
             totalScore -= 1
-            submitScore(-1)
             
             gameFinishedAlert(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
             
@@ -175,6 +178,8 @@ class GameViewController: UIViewController, GameProtocol {
             
             nextLevel()
         }
+        
+        submitScore(totalScore)
         
     }
     
