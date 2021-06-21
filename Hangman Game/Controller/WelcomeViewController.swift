@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GameKit
 
 class WelcomeViewController: UIViewController {
     
@@ -56,6 +57,8 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         // Uncomment the  line below if you want to play Background music
         // MusicPlayer.sharedHelper.playBGMusic()
+        
+        authenticUserGameCenter()
         
         formatUI()
         
@@ -127,6 +130,31 @@ class WelcomeViewController: UIViewController {
      MusicPlayer.sharedHelper.playSound(soundURL: K.Audio.buttonPressedSound)
      }*/
     
+    @IBAction func leaderBoardBtnPressed(_ sender: Any) {
+        let vc = GKGameCenterViewController()
+        vc.gameCenterDelegate = self
+        vc.viewState = .leaderboards
+        vc.leaderboardIdentifier = GameCenterID.id //TODO: - Replace with your leaderBoard ID
+        present(vc, animated: true, completion: nil)
+    }
+    
+    private func authenticUserGameCenter() {
+        let player = GKLocalPlayer.local
+        
+        player.authenticateHandler = { vc, error in
+            guard error == nil else {
+                //Show error
+                print(error?.localizedDescription)
+                return
+            }
+            
+            guard let vc = vc else { return }
+            
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    
     private func animateViewController() {
         // Button animations
         titleLabel.typingTextAnimation(text: K.appName.uppercased(), timeInterval: 0.2)
@@ -159,5 +187,12 @@ class WelcomeViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - GameCenterViewControllerDelegate Method
+extension WelcomeViewController: GKGameCenterControllerDelegate {
     
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
 }

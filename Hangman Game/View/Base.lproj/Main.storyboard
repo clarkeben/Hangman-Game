@@ -66,6 +66,9 @@
                                         <rect key="frame" x="0.0" y="128" width="394" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="LEADERBOARD"/>
+                                        <connections>
+                                            <action selector="leaderBoardBtnPressed:" destination="DGp-Ii-X8c" eventType="touchUpInside" id="Fj3-u2-Mz1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQR-bx-U6O">
                                         <rect key="frame" x="0.0" y="192" width="394" height="39"/>
