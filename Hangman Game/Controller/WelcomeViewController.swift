@@ -32,7 +32,7 @@ class WelcomeViewController: UIViewController {
     
     var soundFXOn = true
     var buttonClicked = false
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
@@ -134,23 +134,28 @@ class WelcomeViewController: UIViewController {
         let vc = GKGameCenterViewController()
         vc.gameCenterDelegate = self
         vc.viewState = .leaderboards
-        vc.leaderboardIdentifier = GameCenterID.id //TODO: - Replace with your leaderBoard ID
+        vc.leaderboardIdentifier = GameCenterID.id
         present(vc, animated: true, completion: nil)
     }
     
     private func authenticUserGameCenter() {
         let player = GKLocalPlayer.local
         
-        player.authenticateHandler = { vc, error in
+        player.authenticateHandler = { [weak self] vc, error in
             guard error == nil else {
-                //Show error
-                print(error?.localizedDescription)
+                
+                let ac = UIAlertController(title: "Error 😔", message: "\(error?.localizedDescription ?? "Error authentication Game Center!")", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Try again", style: .cancel, handler: nil))
+                
+                self?.present(ac, animated: true, completion: nil)
+                
+                
                 return
             }
             
             guard let vc = vc else { return }
             
-            self.present(vc, animated: true, completion: nil)
+            self?.present(vc, animated: true, completion: nil)
         }
     }
     

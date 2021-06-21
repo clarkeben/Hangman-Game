@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GameKit
 
 class GameViewController: UIViewController, GameProtocol {
    
@@ -153,6 +154,7 @@ class GameViewController: UIViewController, GameProtocol {
                 
                 score += 1
                 totalScore += 1
+                submitScore(1)
                 
                 gameFinishedAlert(title: "Congratulations 🎉", message: "You've beat the hangman!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
     
@@ -165,6 +167,7 @@ class GameViewController: UIViewController, GameProtocol {
 
             score -= 1
             totalScore -= 1
+            submitScore(-1)
             
             gameFinishedAlert(title: "💀", message: "The hangman caught you, the word was \"\(word.uppercased())\"!", word: word, actionTitle: "Restart", actionClosure: self.loadWord)
             
@@ -210,6 +213,26 @@ class GameViewController: UIViewController, GameProtocol {
     
     func playSound(sound: String) {
         MusicPlayer.sharedHelper.playSound(soundURL: sound)
+    }
+
+    func submitScore(_ playerScore: Int) {
+        
+        let playerScore = Int64(playerScore)
+        
+        let score = GKScore(leaderboardIdentifier: GameCenterID.id)
+        score.value = playerScore
+        
+        GKScore.report([score]) { [weak self] error in
+            guard error == nil else {
+                let ac = UIAlertController(title: "Error 😔", message: "\(error?.localizedDescription ?? "Error reporting score to Game Center!")", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Try again", style: .cancel, handler: nil))
+                
+                self?.present(ac, animated: true, completion: nil)
+                
+                return
+            }
+            print("Score added to Game Center!")
+        }
     }
     
     private func formatUI(){
