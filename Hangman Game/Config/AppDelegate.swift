@@ -17,6 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
         
+        let defaults = UserDefaults.standard
+        
+        var numberOfTimesOpened = defaults.integer(forKey: K.UserDefaultsKeys.noOfTimesAppOpened)
+        
+        if numberOfTimesOpened >= 200 {
+            numberOfTimesOpened = 0
+        } else {
+            numberOfTimesOpened += 1
+        }
+        
+        defaults.set(numberOfTimesOpened, forKey: "noTimesAppOpened")
+        
+        
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (notifcationsAllowed, error) in
             if error != nil {
