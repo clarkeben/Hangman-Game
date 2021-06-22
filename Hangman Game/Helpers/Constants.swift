@@ -60,4 +60,9 @@ struct K {
     // TableVIew Cells
     static let rulesCellName = "rulesCell"
     
+    //MARK: - UserDefaults
+    struct UserDefaultsKeys {
+        static let noOfTimesAppOpened = "noTimesAppOpened"
+    }
+    
 }

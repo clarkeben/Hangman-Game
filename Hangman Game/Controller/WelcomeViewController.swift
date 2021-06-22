@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import GameKit
+import StoreKit
 
 class WelcomeViewController: UIViewController {
     
@@ -24,6 +25,9 @@ class WelcomeViewController: UIViewController {
     var player: AVAudioPlayer?
     
     let defaults = UserDefaults.standard
+    
+    var reviewPopupShown = false
+    
     var totalScore = 0 {
         didSet {
             totalScoreLabel.text = "Total Points: \(totalScore)"
@@ -51,6 +55,8 @@ class WelcomeViewController: UIViewController {
         } else {
             soundFXOn = true
         }
+        
+        requestReview()
     }
     
     override func viewDidLoad() {
@@ -157,6 +163,30 @@ class WelcomeViewController: UIViewController {
             
             self?.present(vc, animated: true, completion: nil)
         }
+    }
+    
+    
+    private func requestReview() {
+        let noTimesAppOpened = defaults.integer(forKey: K.UserDefaultsKeys.noOfTimesAppOpened)
+                
+        if noTimesAppOpened == 15 || noTimesAppOpened == 30 || noTimesAppOpened == 70 || noTimesAppOpened == 140 {
+            
+            if !reviewPopupShown {
+                
+                if #available(iOS 14.0, *) {
+                    if let windowScene = UIApplication.shared.windows.first?.windowScene { SKStoreReviewController.requestReview(in: windowScene)
+                    }
+                } else {
+                    SKStoreReviewController.requestReview()
+                }
+                reviewPopupShown.toggle()
+            }
+        }
+        
+        if noTimesAppOpened == 141 {
+            defaults.setValue(0, forKey: K.UserDefaultsKeys.noOfTimesAppOpened)
+        }
+        
     }
     
     
